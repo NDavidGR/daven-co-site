@@ -1,401 +1,360 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DAVEN SAS — Material POP y arquitectura efímera</title>
-<meta name="description" content="DAVEN SAS — Proveedor de material POP, señalización, stands y arquitectura efímera. Un solo proveedor, un solo estándar de calidad, sin fragmentación.">
+<title>DAVEN — Agencia creativa. Ideas construidas.</title>
+<meta name="description" content="Agencia creativa colombiana. Construimos las historias que sus marcas necesitan contar — en luz, madera, acero, espacio e impresión.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#151E34;
-    --violet:#3B0086;
-    --accent:#6000DE;
-    --bg:#FAF9FC;
-    --bg-deep:#14002E;
-    --ink:#1B1730;
-    --muted:#6B6480;
-    --line:#E4E1EE;
-    --card:#FFFFFF;
-    --radius:14px;
+    --orange:#e86a0a;
+    --orange-deep:#dd8510;
+    --ink:#151013;
+    --ink-deep:#0d0a0b;
+    --bg:#FAF9F7;
+    --bg-warm:#F3EEE7;
+    --line:rgba(21,16,19,.12);
+    --line-inv:rgba(255,255,255,.16);
   }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
   body{
     font-family:'Archivo',sans-serif;
     background:var(--bg);
     color:var(--ink);
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
   }
-  .mono{font-family:'IBM Plex Mono',monospace;letter-spacing:.02em;}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
-  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  section{padding:110px 0}
+  @media(max-width:720px){section{padding:70px 0}}
 
-  /* NAV */
+  /* HEADER */
   header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(250,249,252,.92);
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(21,16,19,.92);
     backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid var(--line-inv);
   }
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
-  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px;color:var(--violet);text-decoration:none;}
-  .logo .chev{color:var(--accent);font-family:'IBM Plex Mono',monospace;font-weight:600;}
-  .logo .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.06em;margin-left:6px;padding:3px 8px;border:1px solid var(--line);border-radius:20px;}
-  nav.links{display:flex;gap:28px;font-size:14px;font-weight:600;}
-  nav.links a{text-decoration:none;color:var(--ink);opacity:.75;transition:opacity .15s;}
-  nav.links a:hover{opacity:1;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--violet);color:#fff;
-    padding:11px 22px;border-radius:999px;
-    font-weight:700;font-size:14px;text-decoration:none;
-    transition:transform .15s, background .15s;
-    white-space:nowrap;
+  header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo img{height:26px}
+  .logo-text{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#fff;letter-spacing:.04em}
+  .logo-text b{color:var(--orange)}
+  nav{display:flex;gap:32px}
+  @media(max-width:720px){nav{display:none}}
+  nav a{font-size:13px;color:#fff;font-weight:500;letter-spacing:.02em;opacity:.85;transition:opacity .2s}
+  nav a:hover{opacity:1}
+  .nav-cta{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink);
+    background:var(--orange);padding:9px 18px;border-radius:2px;font-weight:600;
   }
-  .btn:hover{background:var(--accent);transform:translateY(-1px);}
-  .btn.ghost{background:transparent;color:var(--violet);border:1.5px solid var(--violet);}
-  .btn.ghost:hover{background:var(--violet);color:#fff;}
-  @media(max-width:760px){ nav.links{display:none;} }
 
   /* HERO */
   .hero{
-    background:linear-gradient(180deg, var(--bg) 0%, #F1ECFB 100%);
-    padding:72px 0 64px;
-    position:relative;overflow:hidden;
+    background:var(--ink-deep);
+    color:#fff;
+    padding:200px 0 140px;
+    position:relative;
+    overflow:hidden;
   }
-  .hero::after{
-    content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;
-    background:radial-gradient(circle, rgba(96,0,222,.14), transparent 70%);
-    border-radius:50%;
+  .hero::before{
+    content:"";position:absolute;right:-10%;top:-20%;width:600px;height:600px;
+    background:radial-gradient(circle,rgba(232,106,10,.25) 0%,transparent 70%);
   }
   .eyebrow{
-    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;
-    color:var(--accent);text-transform:uppercase;letter-spacing:.08em;
-    display:flex;align-items:center;gap:10px;margin-bottom:18px;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--orange);
+    letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;
   }
-  .eyebrow::before{content:"";width:28px;height:2px;background:var(--accent);}
-  h1{
-    font-size:clamp(32px,4.6vw,54px);
-    font-weight:800;line-height:1.08;letter-spacing:-.02em;
-    color:var(--navy);max-width:820px;margin-bottom:22px;
+  .hero h1{
+    font-size:clamp(38px,6vw,84px);
+    font-weight:900;
+    line-height:1.02;
+    letter-spacing:-.02em;
+    max-width:920px;
+    position:relative;
   }
-  h1 em{font-style:normal;color:var(--violet);}
-  .lede{font-size:19px;color:var(--muted);max-width:600px;margin-bottom:34px;}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero h1 em{color:var(--orange);font-style:normal}
+  .hero p{
+    margin-top:32px;font-size:19px;color:rgba(255,255,255,.65);max-width:520px;font-weight:400;
+  }
 
-  .stat-row{
+  /* METODO */
+  .metodo{background:var(--bg)}
+  .metodo blockquote{
+    font-size:clamp(24px,3.4vw,42px);
+    font-weight:700;
+    line-height:1.28;
+    max-width:920px;
+    letter-spacing:-.01em;
+  }
+  .metodo blockquote .accent{color:var(--orange)}
+
+  /* CAPACIDAD */
+  .capacidad{background:var(--ink-deep);color:#fff}
+  .section-head{max-width:640px;margin-bottom:64px}
+  .section-head .eyebrow{margin-bottom:16px}
+  .section-head h2{font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-.01em}
+  .cap-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-    background:var(--line);border:1px solid var(--line);border-radius:var(--radius);
-    overflow:hidden;margin-top:56px;
+    background:var(--line-inv);border:1px solid var(--line-inv);
   }
-  .stat{background:var(--card);padding:22px 24px;}
-  .stat .n{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:26px;color:var(--violet);}
-  .stat .l{font-size:13px;color:var(--muted);margin-top:4px;}
-  @media(max-width:640px){.stat-row{grid-template-columns:1fr;}}
+  @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.cap-grid{grid-template-columns:1fr}}
+  .cap-item{background:var(--ink-deep);padding:36px 28px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
+  .cap-item .num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--orange)}
+  .cap-item h3{font-size:19px;font-weight:700;margin-top:20px;letter-spacing:-.01em}
+  .cap-item p{font-size:14px;color:rgba(255,255,255,.55);margin-top:8px}
 
-  /* SECTION SHELL */
-  section{padding:84px 0;}
-  .section-head{max-width:640px;margin-bottom:48px;}
-  .kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
-  h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;color:var(--navy);letter-spacing:-.01em;margin-bottom:14px;}
-  .section-head p{color:var(--muted);font-size:17px;}
+  /* PORTAFOLIO */
+  .portafolio{background:var(--bg)}
+  .casos{display:flex;flex-direction:column;gap:2px}
+  .caso{
+    display:grid;grid-template-columns:1fr 1fr;gap:0;
+    background:var(--ink);color:#fff;
+    min-height:420px;
+  }
+  .caso:nth-child(even){grid-template-columns:1fr 1fr}
+  .caso:nth-child(even) .caso-media{order:2}
+  @media(max-width:820px){.caso{grid-template-columns:1fr}.caso:nth-child(even) .caso-media{order:0}}
+  .caso-media{position:relative;overflow:hidden;background:#000}
+  .caso-media-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;height:100%}
+  .caso-media-grid img{width:100%;height:100%;object-fit:cover;min-height:210px}
+  .caso-body{padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+  @media(max-width:720px){.caso-body{padding:40px 28px}}
+  .caso-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+  .caso-body h3{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.01em;margin-bottom:16px}
+  .caso-body p{font-size:15.5px;color:rgba(255,255,255,.68);max-width:440px}
 
-  /* POP PROTAGONIST */
-  .pop-section{background:var(--navy);color:#fff;}
-  .pop-section .kicker{color:#9B7BFF;}
-  .pop-section h2{color:#fff;}
-  .pop-section .section-head p{color:#B9B6CC;}
-  .pop-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;}
-  @media(max-width:820px){.pop-grid{grid-template-columns:1fr;}}
-  .pop-copy p{color:#CFCBE0;font-size:16px;margin-bottom:18px;}
-  .pop-copy strong{color:#fff;}
-  .pop-side{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.12);
-    border-radius:var(--radius);
-    padding:28px;
+  .tecnica-head{margin-top:120px}
+  .tecnica-grid{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:2px;
   }
-  .pop-side h3{font-size:15px;font-family:'IBM Plex Mono',monospace;color:#9B7BFF;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em;}
-  .pop-side ul{list-style:none;}
-  .pop-side li{
-    display:flex;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.08);
-    font-size:14.5px;color:#DEDBEE;
-  }
-  .pop-side li:first-child{border-top:none;}
-  .pop-side li::before{content:"—";color:#9B7BFF;flex-shrink:0;}
+  @media(max-width:900px){.tecnica-grid{grid-template-columns:repeat(4,1fr)}}
+  @media(max-width:560px){.tecnica-grid{grid-template-columns:repeat(3,1fr)}}
+  .tecnica-item{aspect-ratio:1;overflow:hidden;background:var(--ink)}
+  .tecnica-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .tecnica-item:hover img{transform:scale(1.08)}
 
-  /* CAPABILITY BLOCKS */
-  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  @media(max-width:900px){.cap-grid{grid-template-columns:1fr;}}
-  .cap-card{
-    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-    padding:30px 26px;transition:box-shadow .2s, transform .2s;
+  /* CIERRE */
+  .cierre{background:var(--ink-deep);color:#fff;text-align:center}
+  .cierre h2{
+    font-size:clamp(30px,5vw,64px);font-weight:900;letter-spacing:-.02em;max-width:820px;margin:0 auto 40px;
   }
-  .cap-card:hover{box-shadow:0 12px 32px rgba(59,0,134,.10);transform:translateY(-3px);}
-  .cap-icon{
-    width:44px;height:44px;border-radius:10px;background:#F1ECFB;
-    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  .cierre h2 .accent{color:var(--orange)}
+  .cierre-cta{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--orange);color:var(--ink);
+    padding:16px 32px;font-weight:700;font-size:15px;border-radius:2px;
   }
-  .cap-icon svg{width:22px;height:22px;stroke:var(--violet);}
-  .cap-card h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;}
-  .cap-card ul{list-style:none;font-size:14.5px;color:var(--muted);}
-  .cap-card li{padding:5px 0;padding-left:16px;position:relative;}
-  .cap-card li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
 
-  /* SUSTAINABILITY STRIP */
-  .strip{
-    background:#F1ECFB;border-radius:var(--radius);
-    padding:40px 36px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
-  }
-  @media(max-width:820px){.strip{grid-template-columns:1fr;}}
-  .strip h2{font-size:24px;margin-bottom:12px;}
-  .strip p{color:var(--muted);font-size:15.5px;}
-  .strip-points{display:flex;flex-direction:column;gap:14px;}
-  .strip-points .pt{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--ink);}
-  .strip-points .pt b{color:var(--violet);font-family:'IBM Plex Mono',monospace;font-size:13px;flex-shrink:0;width:20px;}
-
-  /* TEAM */
-  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  @media(max-width:820px){.team-grid{grid-template-columns:1fr;}}
-  .team-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
-  .avatar{
-    width:52px;height:52px;border-radius:50%;
-    background:linear-gradient(135deg,var(--violet),var(--accent));
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:16px;
-    margin-bottom:16px;
-  }
-  .team-card h3{font-size:16px;font-weight:700;color:var(--navy);}
-  .team-card .role{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);margin:4px 0 12px;text-transform:uppercase;letter-spacing:.04em;}
-  .team-card p{font-size:14px;color:var(--muted);}
-
-  /* CONTACT */
-  .contact-section{background:var(--bg-deep);color:#fff;}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
-  @media(max-width:820px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-section .kicker{color:#9B7BFF;}
-  .contact-section h2{color:#fff;}
-  .contact-section .lede{color:#B9B6CC;font-size:17px;margin-bottom:28px;max-width:480px;}
-  .contact-card{
-    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
-    border-radius:var(--radius);padding:32px;
-  }
-  .field-row{display:flex;flex-direction:column;gap:6px;padding:16px 0;border-top:1px solid rgba(255,255,255,.08);}
-  .field-row:first-child{border-top:none;padding-top:0;}
-  .field-row .k{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#9B7BFF;text-transform:uppercase;letter-spacing:.06em;}
-  .field-row .v{font-size:15.5px;color:#fff;font-weight:600;}
-  .field-row .v a{text-decoration:none;color:#fff;border-bottom:1px solid rgba(255,255,255,.3);}
-
-  footer{
-    background:var(--bg-deep);color:#8B84A6;
-    padding:28px 0;border-top:1px solid rgba(255,255,255,.08);
-    font-size:12.5px;
-  }
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-  footer .flogo{color:#fff;font-weight:800;font-family:'Archivo',sans-serif;}
+  /* FOOTER */
+  footer{background:var(--ink-deep);color:rgba(255,255,255,.5);padding:48px 0 40px;border-top:1px solid var(--line-inv)}
+  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:13px;font-family:'IBM Plex Mono',monospace}
+  .foot-row a{color:#fff}
+  .foot-legal{margin-top:20px;font-size:12px;opacity:.6}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav">
-    <a href="#top" class="logo">DAVEN <span class="chev">&gt;&gt;&gt;</span><span class="tag">SAS · Colombia</span></a>
-    <nav class="links">
-      <a href="#pop">Material POP</a>
-      <a href="#capacidades">Capacidades</a>
-      <a href="#equipo">Equipo</a>
+  <div class="wrap">
+    <div class="logo">
+      <img src="assets/logo-co.svg" alt="DAVEN">
+      <span class="logo-text">DAVEN <b>&gt;&gt;&gt;</b> CO</span>
+    </div>
+    <nav>
+      <a href="#capacidad">Capacidad</a>
+      <a href="#metodo">Método</a>
+      <a href="#portafolio">Portafolio</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <a href="#contacto" class="btn">Registrarnos como proveedor</a>
+    <a href="#contacto" class="nav-cta">Hablemos</a>
   </div>
 </header>
 
-<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Agencia creativa · Bogotá, Colombia</div>
+    <h1>Si tú lo puedes imaginar,<br>nosotros lo podemos <em>construir.</em></h1>
+    <p>Creatividad, storytelling y producción, convertidos en algo que se toca, se recorre y se recuerda.</p>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero" style="padding-top:72px;">
-    <div class="wrap">
-      <div class="eyebrow mono">Proveedor de material POP</div>
-      <h1>Un solo proveedor. <em>Un solo estándar</em> de cumplimiento y calidad.</h1>
-      <p class="lede">DAVEN SAS diseña y produce material POP, señalización y arquitectura efímera para organizaciones que ya se cansaron de coordinar múltiples proveedores — y de que ninguno responda por el resultado final.</p>
-      <div class="hero-cta">
-        <a href="#contacto" class="btn">Registrarnos como proveedor</a>
-        <a href="#pop" class="btn ghost">Ver la propuesta</a>
+<section class="metodo" id="metodo">
+  <div class="wrap">
+    <blockquote>
+      Todos saben contar una historia con palabras.<br>
+      Nosotros la contamos <span class="accent">construyéndola</span> —<br>
+      para que deje de leerse y empiece a vivirse.
+    </blockquote>
+  </div>
+</section>
+
+<section class="capacidad" id="capacidad">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Capacidad</div>
+      <h2>No vendemos materiales. Hablamos varios idiomas para contar su historia.</h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-item">
+        <span class="num">01 — Espacio</span>
+        <div><h3>Stands y arquitectura efímera</h3><p>Ambientes que se habitan por un momento y se recuerdan por años.</p></div>
       </div>
-
-      <div class="stat-row">
-        <div class="stat"><div class="n mono">7</div><div class="l">líneas de producción bajo un mismo equipo</div></div>
-        <div class="stat"><div class="n mono">1</div><div class="l">interlocutor — producción, contrato y calidad</div></div>
-        <div class="stat"><div class="n mono">Bogotá</div><div class="l">equipo de producción y diseño en Colombia</div></div>
+      <div class="cap-item">
+        <span class="num">02 — Luz</span>
+        <div><h3>Cajas de luz y neón flex</h3><p>Marca que se ve antes de leerse.</p></div>
+      </div>
+      <div class="cap-item">
+        <span class="num">03 — Acero y precisión</span>
+        <div><h3>Corte y grabado láser</h3><p>Detalle exacto, a la escala que la historia lo pida.</p></div>
+      </div>
+      <div class="cap-item">
+        <span class="num">04 — Madera</span>
+        <div><h3>Señalización y trabajos en madera</h3><p>Wayfinding y acabados con carácter propio.</p></div>
+      </div>
+      <div class="cap-item">
+        <span class="num">05 — Impresión</span>
+        <div><h3>Diseño e impresión / material POP</h3><p>El punto de venta, resuelto con criterio de marca.</p></div>
+      </div>
+      <div class="cap-item">
+        <span class="num">06 — Identidad</span>
+        <div><h3>Branding y merchandising</h3><p>De la idea a lo que la gente se lleva puesto.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- POP PROTAGONIST -->
-  <section class="pop-section" id="pop">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker mono">Nuestro foco</div>
-        <h2>El material POP no es un impreso. Es la primera impresión de la marca en el punto de venta.</h2>
-      </div>
-      <div class="pop-grid">
-        <div class="pop-copy">
-          <p>El material punto de venta dejó de ser un exhibidor más: hoy es lo que sostiene la historia de una marca en el momento exacto en que alguien decide comprar. Cuando la pieza no cumple — llega tarde, se ve distinto a lo aprobado, se cae en dos días — no solo falla un proveedor. Falla la experiencia completa que la organización construyó para ese punto de contacto.</p>
-          <p><strong>Eso es lo que resolvemos.</strong> Producción con storytelling: cada pieza POP comunica lo mismo que comunica la marca en cualquier otro canal — el mismo mensaje, el mismo estándar visual, la misma promesa. Un punto de venta que se ve, se siente y se lee igual que el sitio web o la campaña digital, no una versión aparte hecha por otro proveedor con otro criterio.</p>
-        </div>
-        <div class="pop-side">
-          <h3>Lo que garantizamos</h3>
-          <ul>
-            <li>Cumplimiento de fechas comprometidas, sin reprocesos sobre la marcha</li>
-            <li>Consistencia visual entre punto de venta y canales digitales</li>
-            <li>Un solo interlocutor para producción, contrato y postventa</li>
-            <li>Materiales y acabados verificados antes de entrega, no después del reclamo</li>
-          </ul>
-        </div>
-      </div>
+<section class="portafolio" id="portafolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Prueba</div>
+      <h2>Historias que ya construimos</h2>
     </div>
-  </section>
 
-  <!-- CAPABILITIES -->
-  <section id="capacidades">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker mono">Capacidad instalada</div>
-        <h2>Todo lo que rodea al punto de venta, bajo el mismo equipo.</h2>
-        <p>El material POP es la puerta de entrada. Detrás hay capacidad de producción para resolver el resto del ecosistema visual de una organización, sin fragmentar el trabajo entre proveedores distintos.</p>
+    <div class="casos">
+
+      <div class="caso">
+        <div class="caso-media">
+          <div class="caso-media-grid">
+            <img src="assets/casos/pavco-stand.webp" alt="Stand PAVCO Wavin">
+            <img src="assets/casos/pavco-render.webp" alt="Render stand PAVCO Wavin">
+          </div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-tag">Caso · Espacio</div>
+          <h3>PAVCO Wavin</h3>
+          <p>Un catálogo de más de 4.000 referencias, convertido en un stand ferial completo — del render a la marca instalada y en uso.</p>
+        </div>
       </div>
-      <div class="cap-grid">
 
-        <div class="cap-card">
-          <div class="cap-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+      <div class="caso">
+        <div class="caso-media">
+          <div class="caso-media-grid">
+            <img src="assets/casos/habitat-buho.webp" alt="Campaña Alcaldía de Bogotá - búho">
+            <img src="assets/casos/habitat-colibri.webp" alt="Campaña Alcaldía de Bogotá - colibrí">
           </div>
-          <h3>Producción experiencial</h3>
-          <ul>
-            <li>Stands y arquitectura efímera</li>
-            <li>Estructuras modulares y reutilizables</li>
-            <li>Montaje y desmontaje para ferias y activaciones</li>
-          </ul>
         </div>
-
-        <div class="cap-card">
-          <div class="cap-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
-          </div>
-          <h3>Señalización y luminosos</h3>
-          <ul>
-            <li>Cajas de luz y neón flex</li>
-            <li>Corte y grabado láser</li>
-            <li>Señalización y trabajos en madera</li>
-          </ul>
+        <div class="caso-body">
+          <div class="caso-tag">Caso · Impresión</div>
+          <h3>Alcaldía Mayor de Bogotá — Habitat</h3>
+          <p>Campaña de cuidado ambiental para humedales y cerros orientales. Lo que se protege, se cuenta — en afiches, piezas urbanas y material HabitARTE.</p>
         </div>
-
-        <div class="cap-card">
-          <div class="cap-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4V4Z"/><path d="M8 9h8M8 12h5"/></svg>
-          </div>
-          <h3>Marca y gráfica</h3>
-          <ul>
-            <li>Branding e identidad visual</li>
-            <li>Diseño e impresión de material promocional y POP</li>
-            <li>Merchandising</li>
-          </ul>
-        </div>
-
       </div>
+
+      <div class="caso">
+        <div class="caso-media">
+          <div class="caso-media-grid">
+            <img src="assets/casos/redsge-bicicleta.webp" alt="Campaña Red SGE - equilibrista">
+            <img src="assets/casos/redsge-estatua.webp" alt="Campaña Red SGE - estatua">
+          </div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-tag">Caso · Storytelling</div>
+          <h3>Red SGE / MinTrabajo</h3>
+          <p>Campaña de posicionamiento: perfiles profesionales reales, convertidos en la imagen de lo que sus habilidades les permiten ser.</p>
+        </div>
+      </div>
+
+      <div class="caso">
+        <div class="caso-media">
+          <div class="caso-media-grid">
+            <img src="assets/casos/plus-chaqueta.webp" alt="plus+ dotación">
+            <img src="assets/casos/plus-camisas.webp" alt="plus+ camisas">
+          </div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-tag">Caso · Identidad</div>
+          <h3>plus+</h3>
+          <p>Una marca, todos los formatos: dotación, merchandising y promoción especial — la misma identidad viviendo en superficies distintas.</p>
+        </div>
+      </div>
+
+      <div class="caso">
+        <div class="caso-media">
+          <div class="caso-media-grid">
+            <img src="assets/casos/postobon-flota.webp" alt="Flota Postobón Manzana">
+            <img src="assets/casos/postobon-carro.webp" alt="Carro móvil Postobón">
+          </div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-tag">Caso · Producción</div>
+          <h3>Postobón</h3>
+          <p>Brandeo de flota — el punto de venta que se mueve por la ciudad, de camión en camión.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
 
-  <!-- SUSTAINABILITY -->
-  <section>
-    <div class="wrap">
-      <div class="strip">
-        <div>
-          <h2>Estructuras que se reutilizan, no que se botan después de un evento.</h2>
-          <p>La modularidad y los materiales certificados dejaron de ser un plus: son el estándar que exige el mercado de retail y eventos en 2026. Para una organización con calendario de ferias y activaciones recurrentes, esto se traduce en menor costo por evento, no solo en mejor imagen.</p>
-        </div>
-        <div class="strip-points">
-          <div class="pt"><b>01</b> Sistemas modulares que se reconfiguran para distintos eventos sin fabricar de cero cada vez</div>
-          <div class="pt"><b>02</b> Materiales certificados y de bajo impacto — madera trazable, iluminación LED de bajo consumo</div>
-          <div class="pt"><b>03</b> Diseño pensado para almacenarse, transportarse y volver a montarse sin perder calidad</div>
-        </div>
-      </div>
+    <div class="tecnica-head section-head">
+      <div class="eyebrow">Técnica en acción</div>
+      <h2>Formatos, materiales y detalle de ejecución</h2>
     </div>
-  </section>
-
-  <!-- TEAM -->
-  <section id="equipo">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker mono">Equipo</div>
-        <h2>Un equipo, tres responsabilidades claras.</h2>
-        <p>DAVEN SAS opera con un equipo pequeño y especializado, no con una red de subcontratistas que cambia de proyecto en proyecto.</p>
-      </div>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="avatar">HG</div>
-          <h3>Henry Garzón</h3>
-          <div class="role mono">Producción · Representante Legal</div>
-          <p>Responsable directo de fabricación y calidad de cada pieza — stands, señalización, luminosos y material gráfico.</p>
-        </div>
-        <div class="team-card">
-          <div class="avatar">AL</div>
-          <h3>Alejandro López</h3>
-          <div class="role mono">Contratos y Negocio</div>
-          <p>Estructuración comercial y contractual con clientes institucionales, con experiencia específica en esa área.</p>
-        </div>
-        <div class="team-card">
-          <div class="avatar">DG</div>
-          <h3>David Garzón</h3>
-          <div class="role mono">Dirección · Relación Comercial</div>
-          <p>Coordinación general del proyecto y punto de contacto comercial entre el equipo de producción y el cliente.</p>
-        </div>
-      </div>
+    <div class="tecnica-grid">
+      <div class="tecnica-item"><img src="assets/tecnica/laser-corte.webp" alt="Corte láser"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/menu-restaurant.webp" alt="Menú en madera, Different Restaurant"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/sanjuan-emporio.webp" alt="Señalización San Juan Emporio"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/aroma-pizza.webp" alt="Señalización Aroma Pizza"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/senaletica-led.webp" alt="Señalética LED en madera y acrílico"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/acrilico-led.webp" alt="Aviso acrílico con luz LED"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/tictactoe.webp" alt="Juego en madera"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/zix-cornhole.webp" alt="Cornhole ZIX Biocidas"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/calendario-madera.webp" alt="Calendario en madera"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/gafas-madera.webp" alt="Base para gafas en madera"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/trofeo-acrilico.webp" alt="Trofeo en acrílico cortado a láser"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/van-petshop.webp" alt="Brandeo vehicular pet shop"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/elnogal-poster.webp" alt="Afiche Club El Nogal"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/politecnico-1.webp" alt="Carpeta corporativa Politécnico Grancolombiano"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/politecnico-2.webp" alt="Brochure Politécnico Grancolombiano"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/brigard-1.webp" alt="Carpeta corporativa Brigard & Urrutia"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/brigard-2.webp" alt="Brochure Brigard & Urrutia"></div>
+      <div class="tecnica-item"><img src="assets/tecnica/efecty.webp" alt="Carpeta corporativa Efecty"></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="contact-section" id="contacto">
-    <div class="wrap">
-      <div class="contact-grid">
-        <div>
-          <div class="kicker mono">Registro de proveedor</div>
-          <h2>Empecemos con lo que necesitan hoy.</h2>
-          <p class="lede">Escríbenos directamente o inicia el proceso de registro como proveedor. Respondemos desde el mismo equipo que produce.</p>
-          <a href="mailto:co@daven.llc" class="btn">Escribir a co@daven.llc</a>
-        </div>
-        <div class="contact-card">
-          <div class="field-row">
-            <div class="k mono">Razón social</div>
-            <div class="v">DAVEN SAS</div>
-          </div>
-          <div class="field-row">
-            <div class="k mono">NIT</div>
-            <div class="v">900.967.967-1</div>
-          </div>
-          <div class="field-row">
-            <div class="k mono">Domicilio</div>
-            <div class="v">Bogotá D.C., Colombia</div>
-          </div>
-          <div class="field-row">
-            <div class="k mono">Correo</div>
-            <div class="v"><a href="mailto:co@daven.llc">co@daven.llc</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
+<section class="cierre" id="contacto">
+  <div class="wrap">
+    <h2>¿Qué historia <span class="accent">traemos a la vida</span> hoy?</h2>
+    <a href="mailto:david@daven.llc" class="cierre-cta">Escríbanos → david@daven.llc</a>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
-    <span class="flogo">DAVEN SAS</span>
-    <span>© 2026 DAVEN SAS · NIT 900.967.967-1 · Bogotá, Colombia</span>
+    <div class="foot-row">
+      <span>DAVEN SAS · NIT 900.967.967-1 · Bogotá D.C.</span>
+      <a href="mailto:david@daven.llc">david@daven.llc</a>
+      <a href="https://daven.llc" target="_blank">daven.llc — US</a>
+    </div>
+    <div class="foot-legal">© 2026 DAVEN SAS. Todos los derechos reservados.</div>
   </div>
 </footer>
 
