@@ -12,13 +12,13 @@
   :root{
     --orange:#cc5a1e;
     --orange-deep:#b34e18;
-    --paper:#F6F2EA;
-    --paper-mid:#DAD3C6;
-    --stone:#75695C;
-    --ink:#332C25;
-    --ink-deep:#241F19;
-    --line:rgba(51,44,37,.14);
-    --line-inv:rgba(246,242,234,.14);
+    --paper:#E8E6E1;
+    --paper-mid:#D2CFC8;
+    --stone:#6B6862;
+    --ink:#3D3B37;
+    --ink-deep:#302E2B;
+    --line:rgba(61,59,55,.14);
+    --line-inv:rgba(232,230,225,.14);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -39,7 +39,7 @@
   /* HEADER */
   header{
     position:fixed;top:0;left:0;right:0;z-index:100;
-    background:rgba(36,31,25,.94);
+    background:rgba(48,46,43,.94);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line-inv);
   }
@@ -150,7 +150,7 @@
 
   /* LIGHTBOX */
   #lightbox{
-    position:fixed;inset:0;z-index:1000;background:rgba(36,31,25,.94);
+    position:fixed;inset:0;z-index:1000;background:rgba(48,46,43,.94);
     display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;
   }
   #lightbox.open{display:flex}
@@ -303,7 +303,7 @@
 
       <div class="caso">
         <div class="caso-media">
-          <div class="caso-media-grid stack">
+          <div class="caso-media-grid split">
             <img src="assets/casos/plus-chaqueta.webp" alt="plus+ dotación">
             <img src="assets/casos/plus-camisas.webp" alt="plus+ camisas">
           </div>
@@ -317,7 +317,7 @@
 
       <div class="caso">
         <div class="caso-media">
-          <div class="caso-media-grid stack">
+          <div class="caso-media-grid split">
             <img src="assets/casos/postobon-flota.webp" alt="Flota Postobón Manzana">
             <img src="assets/casos/postobon-carro.webp" alt="Carro móvil Postobón">
           </div>
