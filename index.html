@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DAVEN — Agencia creativa. Ideas construidas.</title>
-<meta name="description" content="Agencia creativa colombiana. Construimos las historias que sus marcas necesitan contar — en luz, madera, acero, espacio e impresión.">
+<title>DAVEN Colombia | Agencia creativa y material POP en Bogotá</title>
+<meta name="description" content="Agencia creativa en Bogotá. Diseñamos y producimos material POP, stands, señalización y piezas de marca. Ideas construidas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -66,7 +66,7 @@
     font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--orange);
     letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;
   }
-  .portafolio .eyebrow,.tecnica-head .eyebrow{color:var(--orange-deep)}
+  .trayectoria .eyebrow{color:var(--orange-deep)}
   .hero h1{
     font-size:clamp(38px,6vw,84px);
     font-weight:900;
@@ -79,10 +79,20 @@
   .hero p{
     margin-top:32px;font-size:19px;color:rgba(255,255,255,.65);max-width:520px;font-weight:400;
   }
+  .hero-btns{display:flex;align-items:center;gap:28px;margin-top:44px;flex-wrap:wrap}
+  .btn-primary{
+    font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--ink-deep);
+    background:var(--orange);padding:15px 28px;border-radius:4px;letter-spacing:.02em;
+  }
+  .btn-secondary{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:#fff;
+    opacity:.75;letter-spacing:.02em;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:3px;
+  }
+  .btn-secondary:hover{opacity:1}
 
-  /* METODO */
-  .metodo{background:var(--paper)}
-  .metodo blockquote{
+  /* MANIFIESTO */
+  .manifiesto{background:var(--paper)}
+  .manifiesto blockquote{
     font-size:clamp(24px,3.4vw,42px);
     font-weight:700;
     line-height:1.28;
@@ -90,27 +100,55 @@
     letter-spacing:-.01em;
     color:var(--ink);
   }
-  .metodo blockquote .accent{color:var(--orange-deep)}
+  .manifiesto blockquote .accent{color:var(--orange-deep)}
 
-  /* CAPACIDAD */
-  .capacidad{background:var(--ink-deep);color:#fff}
+  /* SECTION HEAD */
   .section-head{max-width:640px;margin-bottom:64px}
   .section-head .eyebrow{margin-bottom:16px}
   .section-head h2{font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-.01em}
-  .portafolio .section-head h2{color:var(--ink)}
-  .cap-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-    background:var(--line-inv);border:1px solid var(--line-inv);
-  }
-  @media(max-width:900px){.cap-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.cap-grid{grid-template-columns:1fr}}
-  .cap-item{background:var(--ink-deep);padding:36px 28px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
-  .cap-item .num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--orange)}
-  .cap-item h3{font-size:19px;font-weight:700;margin-top:20px;letter-spacing:-.01em}
-  .cap-item p{font-size:14px;color:rgba(255,255,255,.55);margin-top:8px}
+  .section-head p{margin-top:20px;font-size:17px;color:var(--stone);max-width:520px}
+  .trayectoria .section-head h2{color:var(--ink)}
+  .trayectoria .section-head p{color:var(--stone)}
 
-  /* PORTAFOLIO */
-  .portafolio{background:var(--paper)}
+  /* CONSTRUIMOS (bento) */
+  .construimos{background:var(--ink-deep);color:#fff}
+  .construimos .section-head p{color:rgba(255,255,255,.6)}
+  .construimos-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:190px;gap:2px;
+    background:var(--line-inv);
+  }
+  @media(max-width:900px){.construimos-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}}
+  @media(max-width:560px){.construimos-grid{grid-template-columns:1fr;grid-auto-rows:auto}}
+  .construimos-item{
+    background:var(--ink-deep);padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .construimos-item.big{grid-column:span 2;grid-row:span 2;background:var(--orange);color:var(--ink-deep)}
+  @media(max-width:900px){.construimos-item.big{grid-column:span 2;grid-row:span 1}}
+  @media(max-width:560px){.construimos-item.big{grid-column:span 1}}
+  .construimos-item h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  .construimos-item.big h3{font-size:26px}
+  .construimos-item .linea{font-size:14px;margin-top:8px;color:rgba(255,255,255,.6)}
+  .construimos-item.big .linea{color:rgba(30,30,28,.7);font-size:15px}
+  .construimos-item .detalle{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;margin-top:20px;
+    color:rgba(255,255,255,.4);letter-spacing:.01em;line-height:1.4;
+  }
+  .construimos-item.big .detalle{color:rgba(30,30,28,.55)}
+  .construimos-foot{margin-top:28px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(255,255,255,.4)}
+
+  /* METODO */
+  .metodo{background:var(--paper)}
+  .metodo-list{display:flex;flex-direction:column}
+  .metodo-item{
+    display:grid;grid-template-columns:80px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--line);
+  }
+  .metodo-list .metodo-item:last-child{border-bottom:1px solid var(--line)}
+  .metodo-item .num{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--orange-deep)}
+  .metodo-item p{font-size:17px;color:var(--ink);max-width:640px}
+  .metodo-item p strong{font-weight:800}
+
+  /* TRAYECTORIA */
+  .trayectoria{background:var(--paper)}
   .casos{display:flex;flex-direction:column;gap:18px}
   .caso{
     display:grid;grid-template-columns:1fr 1fr;gap:0;
@@ -130,20 +168,7 @@
   .caso-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
   .caso-body h3{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.01em;margin-bottom:16px}
   .caso-body p{font-size:15.5px;color:rgba(255,255,255,.7);max-width:440px}
-
-  .tecnica-head{margin-top:120px}
-  .tecnica-grid{
-    display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:130px;grid-auto-flow:dense;gap:2px;
-    background:var(--paper-mid);
-  }
-  @media(max-width:900px){.tecnica-grid{grid-template-columns:repeat(4,1fr)}}
-  @media(max-width:560px){.tecnica-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:110px}}
-  .tecnica-item{overflow:hidden;background:var(--paper-mid)}
-  .tecnica-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;cursor:zoom-in}
-  .tecnica-item:hover img{transform:scale(1.08)}
-  .tecnica-item.big{grid-column:span 2;grid-row:span 2}
-  .tecnica-item.wide{grid-column:span 2}
-  .tecnica-item.tall{grid-row:span 2}
+  .otros-clientes{margin-top:40px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--stone);letter-spacing:.01em}
 
   /* LIGHTBOX */
   #lightbox{
@@ -160,9 +185,10 @@
   /* CIERRE */
   .cierre{background:var(--ink-deep);color:#fff;text-align:center}
   .cierre h2{
-    font-size:clamp(30px,5vw,64px);font-weight:900;letter-spacing:-.02em;max-width:820px;margin:0 auto 40px;
+    font-size:clamp(30px,5vw,64px);font-weight:900;letter-spacing:-.02em;max-width:820px;margin:0 auto 20px;
   }
   .cierre h2 .accent{color:var(--orange)}
+  .cierre p{font-size:17px;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 40px}
   .cierre-cta{
     display:inline-flex;align-items:center;gap:10px;
     background:var(--orange);color:var(--ink-deep);
@@ -184,9 +210,9 @@
       <img src="assets/logo-co.svg" alt="DAVEN CO">
     </div>
     <nav>
-      <a href="#capacidad">Capacidad</a>
+      <a href="#construimos">Qué construimos</a>
       <a href="#metodo">Método</a>
-      <a href="#portafolio">Portafolio</a>
+      <a href="#trayectoria">Trayectoria</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <a href="#contacto" class="nav-cta">Hablemos</a>
@@ -196,12 +222,16 @@
 <section class="hero">
   <div class="wrap">
     <div class="eyebrow">Agencia creativa · Bogotá, Colombia</div>
-    <h1>Si tú lo puedes imaginar,<br>nosotros lo podemos <em>construir.</em></h1>
-    <p>Creatividad, storytelling y producción, convertidos en algo que se toca, se recorre y se recuerda.</p>
+    <h1>Si usted lo puede imaginar,<br>nosotros lo podemos <em>construir.</em></h1>
+    <p>Diseñamos y producimos el material que pone su marca en el lugar apropiado: el punto de venta, la feria o la calle.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">Hablemos</a>
+      <a href="#construimos" class="btn-secondary">Ver qué construimos →</a>
+    </div>
   </div>
 </section>
 
-<section class="metodo" id="metodo">
+<section class="manifiesto">
   <div class="wrap">
     <blockquote>
       Todos saben contar una historia con palabras.<br>
@@ -211,46 +241,105 @@
   </div>
 </section>
 
-<section class="capacidad" id="capacidad">
+<section class="construimos" id="construimos">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Capacidad</div>
-      <h2>No vendemos materiales. Hablamos varios idiomas para contar su historia.</h2>
+      <div class="eyebrow">Qué construimos</div>
+      <h2>¿Dónde necesita que su marca VIVA?</h2>
+      <p>Estos son los lugares que sabemos construir.</p>
     </div>
-    <div class="cap-grid">
-      <div class="cap-item">
-        <span class="num">01 — Espacio</span>
-        <div><h3>Stands y arquitectura efímera</h3><p>Ambientes que se habitan por un momento y se recuerdan por años.</p></div>
+    <div class="construimos-grid">
+      <div class="construimos-item big">
+        <div>
+          <h3>En el punto de venta</h3>
+          <p class="linea">Donde la decisión se toma.</p>
+        </div>
+        <span class="detalle">Exhibidores, puntas de góndola, counter displays, stoppers</span>
       </div>
-      <div class="cap-item">
-        <span class="num">02 — Luz</span>
-        <div><h3>Cajas de luz y neón flex</h3><p>Marca que se ve antes de leerse.</p></div>
+      <div class="construimos-item">
+        <div>
+          <h3>En la feria y el evento</h3>
+          <p class="linea">Ambientes que se habitan por un momento y se recuerdan por años.</p>
+        </div>
+        <span class="detalle">Stands, arquitectura efímera, photocalls</span>
       </div>
-      <div class="cap-item">
-        <span class="num">03 — Acero y precisión</span>
-        <div><h3>Corte y grabado láser</h3><p>Detalle exacto, a la escala que la historia lo pida.</p></div>
+      <div class="construimos-item">
+        <div>
+          <h3>En la fachada</h3>
+          <p class="linea">Marca que se ve antes de leerse.</p>
+        </div>
+        <span class="detalle">Cajas de luz, neón flex, corpóreos</span>
       </div>
-      <div class="cap-item">
-        <span class="num">04 — Madera</span>
-        <div><h3>Señalización y trabajos en madera</h3><p>Wayfinding y acabados con carácter propio.</p></div>
+      <div class="construimos-item">
+        <div>
+          <h3>En el espacio</h3>
+          <p class="linea">Que el visitante encuentre el camino sin preguntar.</p>
+        </div>
+        <span class="detalle">Señalización y wayfinding en madera, acrílico y corte láser</span>
       </div>
-      <div class="cap-item">
-        <span class="num">05 — Impresión</span>
-        <div><h3>Diseño e impresión / material POP</h3><p>El punto de venta, resuelto con criterio de marca.</p></div>
+      <div class="construimos-item">
+        <div>
+          <h3>En la calle</h3>
+          <p class="linea">El punto de venta que se mueve por la ciudad.</p>
+        </div>
+        <span class="detalle">Brandeo de flota y vehículos</span>
       </div>
-      <div class="cap-item">
-        <span class="num">06 — Identidad</span>
-        <div><h3>Branding y merchandising</h3><p>De la idea a lo que la gente se lleva puesto.</p></div>
+      <div class="construimos-item">
+        <div>
+          <h3>En la mano</h3>
+          <p class="linea">Lo que la gente se lleva puesto.</p>
+        </div>
+        <span class="detalle">Merchandising, dotación, regalos corporativos</span>
+      </div>
+      <div class="construimos-item">
+        <div>
+          <h3>En la mesa</h3>
+          <p class="linea">Lo que se deja sobre la mesa después de la reunión.</p>
+        </div>
+        <span class="detalle">Carpetas, brochures, piezas impresas corporativas</span>
+      </div>
+    </div>
+    <div class="construimos-foot">Imágenes conceptuales. Se mantiene mientras las imágenes sean generadas y no trabajo instalado.</div>
+  </div>
+</section>
+
+<section class="metodo" id="metodo">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Método</div>
+      <h2>Así construimos</h2>
+    </div>
+    <div class="metodo-list">
+      <div class="metodo-item">
+        <span class="num">01</span>
+        <p><strong>Entender.</strong> Vamos al lugar, medimos el espacio, conocemos el producto y escuchamos qué necesita lograr.</p>
+      </div>
+      <div class="metodo-item">
+        <span class="num">02</span>
+        <p><strong>Imaginar.</strong> Buscamos la idea que cuente su historia, no la que ya se ve en todos lados.</p>
+      </div>
+      <div class="metodo-item">
+        <span class="num">03</span>
+        <p><strong>Diseñar.</strong> Render, planos y materiales definidos antes de producir. Usted ve lo que va a recibir.</p>
+      </div>
+      <div class="metodo-item">
+        <span class="num">04</span>
+        <p><strong>Construir.</strong> Cortamos, imprimimos, armamos y probamos.</p>
+      </div>
+      <div class="metodo-item">
+        <span class="num">05</span>
+        <p><strong>Instalar.</strong> Llega a su sitio y queda funcionando.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="portafolio" id="portafolio">
+<section class="trayectoria" id="trayectoria">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Prueba</div>
-      <h2>Historias que ya construimos</h2>
+      <div class="eyebrow">Trayectoria</div>
+      <h2>Más de 20 años contando historias.</h2>
+      <p>El equipo detrás de DAVEN lleva más de dos décadas en comunicaciones, publicidad, mercadeo y diseño. Estos son algunos trabajos de esa trayectoria.</p>
     </div>
 
     <div class="casos">
@@ -265,49 +354,7 @@
         <div class="caso-body">
           <div class="caso-tag">Caso · Espacio</div>
           <h3>PAVCO Wavin</h3>
-          <p>Un catálogo de más de 4.000 referencias, convertido en un stand ferial completo — del render a la marca instalada y en uso.</p>
-        </div>
-      </div>
-
-      <div class="caso">
-        <div class="caso-media">
-          <div class="caso-media-grid stack">
-            <img src="assets/casos/habitat-buho.webp" alt="Campaña Alcaldía de Bogotá - búho">
-            <img src="assets/casos/habitat-colibri.webp" alt="Campaña Alcaldía de Bogotá - colibrí">
-          </div>
-        </div>
-        <div class="caso-body">
-          <div class="caso-tag">Caso · Impresión</div>
-          <h3>Alcaldía Mayor de Bogotá — Habitat</h3>
-          <p>Campaña de cuidado ambiental para humedales y cerros orientales. Lo que se protege, se cuenta — en afiches, piezas urbanas y material HabitARTE.</p>
-        </div>
-      </div>
-
-      <div class="caso">
-        <div class="caso-media">
-          <div class="caso-media-grid split">
-            <img src="assets/casos/redsge-bicicleta.webp" alt="Campaña Red SGE - equilibrista">
-            <img src="assets/casos/redsge-estatua.webp" alt="Campaña Red SGE - estatua">
-          </div>
-        </div>
-        <div class="caso-body">
-          <div class="caso-tag">Caso · Storytelling</div>
-          <h3>Red SGE / MinTrabajo</h3>
-          <p>Campaña de posicionamiento: perfiles profesionales reales, convertidos en la imagen de lo que sus habilidades les permiten ser.</p>
-        </div>
-      </div>
-
-      <div class="caso">
-        <div class="caso-media">
-          <div class="caso-media-grid split">
-            <img src="assets/casos/plus-chaqueta.webp" alt="plus+ dotación">
-            <img src="assets/casos/plus-camisas.webp" alt="plus+ camisas">
-          </div>
-        </div>
-        <div class="caso-body">
-          <div class="caso-tag">Caso · Identidad</div>
-          <h3>plus+</h3>
-          <p>Una marca, todos los formatos: dotación, merchandising y promoción especial — la misma identidad viviendo en superficies distintas.</p>
+          <p>Un catálogo de más de 4.000 referencias, convertido en un stand ferial completo: del render a la marca instalada y en uso.</p>
         </div>
       </div>
 
@@ -321,42 +368,49 @@
         <div class="caso-body">
           <div class="caso-tag">Caso · Producción</div>
           <h3>Postobón</h3>
-          <p>Brandeo de flota — el punto de venta que se mueve por la ciudad, de camión en camión.</p>
+          <p>Brandeo de flota: el punto de venta que se mueve por la ciudad, de camión en camión.</p>
+        </div>
+      </div>
+
+      <div class="caso">
+        <div class="caso-media">
+          <div class="caso-media-grid split">
+            <img src="assets/casos/plus-chaqueta.webp" alt="plus+ dotación">
+            <img src="assets/casos/plus-camisas.webp" alt="plus+ camisas">
+          </div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-tag">Caso · Identidad</div>
+          <h3>plus+</h3>
+          <p>Una marca en todos los formatos: dotación, merchandising y promoción especial. La misma identidad, en superficies distintas.</p>
+        </div>
+      </div>
+
+      <div class="caso">
+        <div class="caso-media">
+          <div class="caso-media-grid stack">
+            <img src="assets/casos/habitat-buho.webp" alt="Campaña Alcaldía de Bogotá - búho">
+            <img src="assets/casos/habitat-colibri.webp" alt="Campaña Alcaldía de Bogotá - colibrí">
+          </div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-tag">Caso · Impresión</div>
+          <h3>Alcaldía Mayor de Bogotá — Hábitat</h3>
+          <p>Campaña de cuidado ambiental para humedales y cerros orientales, en afiches, piezas urbanas y material HabitARTE. Lo que se protege, se cuenta.</p>
         </div>
       </div>
 
     </div>
 
-    <div class="tecnica-head section-head">
-      <div class="eyebrow">Técnica en acción</div>
-      <h2>Formatos, materiales y detalle de ejecución</h2>
-    </div>
-    <div class="tecnica-grid">
-      <div class="tecnica-item big"><img src="assets/tecnica/laser-corte.webp" alt="Corte láser"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/menu-restaurant.webp" alt="Menú en madera, Different Restaurant"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/sanjuan-emporio.webp" alt="Señalización San Juan Emporio"></div>
-      <div class="tecnica-item tall"><img src="assets/tecnica/aroma-pizza.webp" alt="Señalización Aroma Pizza"></div>
-      <div class="tecnica-item wide"><img src="assets/tecnica/senaletica-led.webp" alt="Señalética LED en madera y acrílico"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/acrilico-led.webp" alt="Aviso acrílico con luz LED"></div>
-      <div class="tecnica-item tall"><img src="assets/tecnica/tictactoe.webp" alt="Juego en madera"></div>
-      <div class="tecnica-item wide"><img src="assets/tecnica/zix-cornhole.webp" alt="Cornhole ZIX Biocidas"></div>
-      <div class="tecnica-item tall"><img src="assets/tecnica/calendario-madera.webp" alt="Calendario en madera"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/gafas-madera.webp" alt="Base para gafas en madera"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/trofeo-acrilico.webp" alt="Trofeo en acrílico cortado a láser"></div>
-      <div class="tecnica-item wide"><img src="assets/tecnica/van-petshop.webp" alt="Brandeo vehicular pet shop"></div>
-      <div class="tecnica-item tall"><img src="assets/tecnica/elnogal-poster.webp" alt="Afiche Club El Nogal"></div>
-      <div class="tecnica-item tall"><img src="assets/tecnica/politecnico-1.webp" alt="Carpeta corporativa Politécnico Grancolombiano"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/politecnico-2.webp" alt="Brochure Politécnico Grancolombiano"></div>
-      <div class="tecnica-item wide"><img src="assets/tecnica/brigard-1.webp" alt="Carpeta corporativa Brigard & Urrutia"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/brigard-2.webp" alt="Brochure Brigard & Urrutia"></div>
-      <div class="tecnica-item big"><img src="assets/tecnica/efecty.webp" alt="Carpeta corporativa Efecty"></div>
-    </div>
+    <div class="otros-clientes">Otros clientes del equipo: Brigard &amp; Urrutia · Efecty · Politécnico Grancolombiano · Club El Nogal.</div>
+
   </div>
 </section>
 
 <section class="cierre" id="contacto">
   <div class="wrap">
-    <h2>¿Qué historia <span class="accent">traemos a la vida</span> hoy?</h2>
+    <h2>Cuéntenos <span class="accent">dónde</span>, y lo construimos.</h2>
+    <p>Escríbanos qué necesita, dónde va a estar y para cuándo.</p>
     <a href="mailto:david@daven.llc" class="cierre-cta">Escríbanos → david@daven.llc</a>
   </div>
 </section>
@@ -376,7 +430,7 @@
 <script>
   var lb = document.getElementById('lightbox');
   var lbImg = document.getElementById('lb-img');
-  document.querySelectorAll('.caso-media-grid img, .tecnica-item img').forEach(function(img){
+  document.querySelectorAll('.caso-media-grid img').forEach(function(img){
     img.addEventListener('click', function(){
       lbImg.src = img.src;
       lbImg.alt = img.alt;
