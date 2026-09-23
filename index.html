@@ -10,15 +10,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --orange:#cc5a1e;
-    --orange-deep:#b34e18;
-    --paper:#E8E6E1;
-    --paper-mid:#D2CFC8;
-    --stone:#6B6862;
-    --ink:#3D3B37;
-    --ink-deep:#302E2B;
-    --line:rgba(61,59,55,.14);
-    --line-inv:rgba(232,230,225,.14);
+    --orange:#FF5B14;
+    --orange-deep:#C93F00;
+    --paper:#F2EEE6;
+    --paper-mid:#E2DCCF;
+    --stone:#6B6963;
+    --ink:#1E1E1C;
+    --ink-deep:#1E1E1C;
+    --line:rgba(30,30,28,.14);
+    --line-inv:rgba(242,238,230,.14);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -39,22 +39,20 @@
   /* HEADER */
   header{
     position:fixed;top:0;left:0;right:0;z-index:100;
-    background:rgba(48,46,43,.94);
+    background:rgba(242,238,230,.94);
     backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line-inv);
+    border-bottom:1px solid var(--line);
   }
   header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
   .logo{display:flex;align-items:center;gap:10px}
   .logo img{height:26px}
-  .logo-text{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#fff;letter-spacing:.04em}
-  .logo-text b{color:var(--orange)}
   nav{display:flex;gap:32px}
   @media(max-width:720px){nav{display:none}}
-  nav a{font-size:13px;color:#fff;font-weight:500;letter-spacing:.02em;opacity:.85;transition:opacity .2s}
+  nav a{font-size:13px;color:var(--ink);font-weight:500;letter-spacing:.02em;opacity:.75;transition:opacity .2s}
   nav a:hover{opacity:1}
   .nav-cta{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;color:#fff;
-    background:var(--orange);padding:9px 18px;border-radius:2px;font-weight:600;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink);
+    background:var(--orange);padding:9px 18px;border-radius:4px;font-weight:600;
   }
 
   /* HERO */
@@ -63,16 +61,12 @@
     color:#fff;
     padding:200px 0 140px;
     position:relative;
-    overflow:hidden;
-  }
-  .hero::before{
-    content:"";position:absolute;right:-10%;top:-20%;width:600px;height:600px;
-    background:radial-gradient(circle,rgba(204,90,30,.3) 0%,transparent 70%);
   }
   .eyebrow{
     font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--orange);
     letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;
   }
+  .portafolio .eyebrow,.tecnica-head .eyebrow{color:var(--orange-deep)}
   .hero h1{
     font-size:clamp(38px,6vw,84px);
     font-weight:900;
@@ -96,7 +90,7 @@
     letter-spacing:-.01em;
     color:var(--ink);
   }
-  .metodo blockquote .accent{color:var(--orange)}
+  .metodo blockquote .accent{color:var(--orange-deep)}
 
   /* CAPACIDAD */
   .capacidad{background:var(--ink-deep);color:#fff}
@@ -139,22 +133,25 @@
 
   .tecnica-head{margin-top:120px}
   .tecnica-grid{
-    display:grid;grid-template-columns:repeat(6,1fr);gap:2px;
+    display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:130px;grid-auto-flow:dense;gap:2px;
     background:var(--paper-mid);
   }
   @media(max-width:900px){.tecnica-grid{grid-template-columns:repeat(4,1fr)}}
-  @media(max-width:560px){.tecnica-grid{grid-template-columns:repeat(3,1fr)}}
-  .tecnica-item{aspect-ratio:1;overflow:hidden;background:var(--paper-mid)}
+  @media(max-width:560px){.tecnica-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:110px}}
+  .tecnica-item{overflow:hidden;background:var(--paper-mid)}
   .tecnica-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s;cursor:zoom-in}
   .tecnica-item:hover img{transform:scale(1.08)}
+  .tecnica-item.big{grid-column:span 2;grid-row:span 2}
+  .tecnica-item.wide{grid-column:span 2}
+  .tecnica-item.tall{grid-row:span 2}
 
   /* LIGHTBOX */
   #lightbox{
-    position:fixed;inset:0;z-index:1000;background:rgba(48,46,43,.94);
+    position:fixed;inset:0;z-index:1000;background:rgba(30,30,28,.96);
     display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;
   }
   #lightbox.open{display:flex}
-  #lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+  #lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
   #lightbox .lb-close{
     position:absolute;top:24px;right:28px;color:#fff;font-family:'IBM Plex Mono',monospace;
     font-size:14px;letter-spacing:.05em;opacity:.7;
@@ -168,8 +165,8 @@
   .cierre h2 .accent{color:var(--orange)}
   .cierre-cta{
     display:inline-flex;align-items:center;gap:10px;
-    background:var(--orange);color:#fff;
-    padding:16px 32px;font-weight:700;font-size:15px;border-radius:2px;
+    background:var(--orange);color:var(--ink-deep);
+    padding:16px 32px;font-weight:700;font-size:15px;border-radius:4px;
   }
 
   /* FOOTER */
@@ -184,8 +181,7 @@
 <header>
   <div class="wrap">
     <div class="logo">
-      <img src="assets/logo-co.svg" alt="DAVEN">
-      <span class="logo-text">DAVEN <b>&gt;&gt;&gt;</b> CO</span>
+      <img src="assets/logo-co.svg" alt="DAVEN CO">
     </div>
     <nav>
       <a href="#capacidad">Capacidad</a>
@@ -336,24 +332,24 @@
       <h2>Formatos, materiales y detalle de ejecución</h2>
     </div>
     <div class="tecnica-grid">
-      <div class="tecnica-item"><img src="assets/tecnica/laser-corte.webp" alt="Corte láser"></div>
+      <div class="tecnica-item big"><img src="assets/tecnica/laser-corte.webp" alt="Corte láser"></div>
       <div class="tecnica-item"><img src="assets/tecnica/menu-restaurant.webp" alt="Menú en madera, Different Restaurant"></div>
       <div class="tecnica-item"><img src="assets/tecnica/sanjuan-emporio.webp" alt="Señalización San Juan Emporio"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/aroma-pizza.webp" alt="Señalización Aroma Pizza"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/senaletica-led.webp" alt="Señalética LED en madera y acrílico"></div>
+      <div class="tecnica-item tall"><img src="assets/tecnica/aroma-pizza.webp" alt="Señalización Aroma Pizza"></div>
+      <div class="tecnica-item wide"><img src="assets/tecnica/senaletica-led.webp" alt="Señalética LED en madera y acrílico"></div>
       <div class="tecnica-item"><img src="assets/tecnica/acrilico-led.webp" alt="Aviso acrílico con luz LED"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/tictactoe.webp" alt="Juego en madera"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/zix-cornhole.webp" alt="Cornhole ZIX Biocidas"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/calendario-madera.webp" alt="Calendario en madera"></div>
+      <div class="tecnica-item tall"><img src="assets/tecnica/tictactoe.webp" alt="Juego en madera"></div>
+      <div class="tecnica-item wide"><img src="assets/tecnica/zix-cornhole.webp" alt="Cornhole ZIX Biocidas"></div>
+      <div class="tecnica-item tall"><img src="assets/tecnica/calendario-madera.webp" alt="Calendario en madera"></div>
       <div class="tecnica-item"><img src="assets/tecnica/gafas-madera.webp" alt="Base para gafas en madera"></div>
       <div class="tecnica-item"><img src="assets/tecnica/trofeo-acrilico.webp" alt="Trofeo en acrílico cortado a láser"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/van-petshop.webp" alt="Brandeo vehicular pet shop"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/elnogal-poster.webp" alt="Afiche Club El Nogal"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/politecnico-1.webp" alt="Carpeta corporativa Politécnico Grancolombiano"></div>
+      <div class="tecnica-item wide"><img src="assets/tecnica/van-petshop.webp" alt="Brandeo vehicular pet shop"></div>
+      <div class="tecnica-item tall"><img src="assets/tecnica/elnogal-poster.webp" alt="Afiche Club El Nogal"></div>
+      <div class="tecnica-item tall"><img src="assets/tecnica/politecnico-1.webp" alt="Carpeta corporativa Politécnico Grancolombiano"></div>
       <div class="tecnica-item"><img src="assets/tecnica/politecnico-2.webp" alt="Brochure Politécnico Grancolombiano"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/brigard-1.webp" alt="Carpeta corporativa Brigard & Urrutia"></div>
+      <div class="tecnica-item wide"><img src="assets/tecnica/brigard-1.webp" alt="Carpeta corporativa Brigard & Urrutia"></div>
       <div class="tecnica-item"><img src="assets/tecnica/brigard-2.webp" alt="Brochure Brigard & Urrutia"></div>
-      <div class="tecnica-item"><img src="assets/tecnica/efecty.webp" alt="Carpeta corporativa Efecty"></div>
+      <div class="tecnica-item big"><img src="assets/tecnica/efecty.webp" alt="Carpeta corporativa Efecty"></div>
     </div>
   </div>
 </section>
