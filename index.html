@@ -114,26 +114,21 @@
   .construimos{background:var(--ink-deep);color:#fff}
   .construimos .section-head p{color:rgba(255,255,255,.6)}
   .construimos-grid{
-    display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:190px;gap:2px;
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:2px;
     background:var(--line-inv);
   }
-  @media(max-width:900px){.construimos-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}}
-  @media(max-width:560px){.construimos-grid{grid-template-columns:1fr;grid-auto-rows:auto}}
-  .construimos-item{
-    background:var(--ink-deep);padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;
+  @media(max-width:720px){.construimos-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}}
+  .construimos-item{position:relative;overflow:hidden;background:var(--ink-deep)}
+  .construimos-item.h{grid-column:span 2}
+  .construimos-item.v{grid-row:span 2}
+  @media(max-width:720px){.construimos-item.v{grid-row:span 1}}
+  .construimos-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;cursor:zoom-in}
+  .construimos-item:hover img{transform:scale(1.06)}
+  .construimos-item .cap{
+    position:absolute;left:0;right:0;bottom:0;padding:10px 14px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:#fff;background:rgba(30,30,28,.72);
   }
-  .construimos-item.big{grid-column:span 2;grid-row:span 2;background:var(--orange);color:var(--ink-deep)}
-  @media(max-width:900px){.construimos-item.big{grid-column:span 2;grid-row:span 1}}
-  @media(max-width:560px){.construimos-item.big{grid-column:span 1}}
-  .construimos-item h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
-  .construimos-item.big h3{font-size:26px}
-  .construimos-item .linea{font-size:14px;margin-top:8px;color:rgba(255,255,255,.6)}
-  .construimos-item.big .linea{color:rgba(30,30,28,.7);font-size:15px}
-  .construimos-item .detalle{
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;margin-top:20px;
-    color:rgba(255,255,255,.4);letter-spacing:.01em;line-height:1.4;
-  }
-  .construimos-item.big .detalle{color:rgba(30,30,28,.55)}
 
   /* METODO */
   .metodo{background:var(--paper)}
@@ -248,57 +243,18 @@
       <p>Estos son los lugares que sabemos construir.</p>
     </div>
     <div class="construimos-grid">
-      <div class="construimos-item big">
-        <div>
-          <h3>En el punto de venta</h3>
-          <p class="linea">Donde la decisión se toma.</p>
-        </div>
-        <span class="detalle">Exhibidores, puntas de góndola, counter displays, stoppers</span>
-      </div>
-      <div class="construimos-item">
-        <div>
-          <h3>En la feria y el evento</h3>
-          <p class="linea">Ambientes que se habitan por un momento y se recuerdan por años.</p>
-        </div>
-        <span class="detalle">Stands, arquitectura efímera, photocalls</span>
-      </div>
-      <div class="construimos-item">
-        <div>
-          <h3>En la fachada</h3>
-          <p class="linea">Marca que se ve antes de leerse.</p>
-        </div>
-        <span class="detalle">Cajas de luz, neón flex, corpóreos</span>
-      </div>
-      <div class="construimos-item">
-        <div>
-          <h3>En el espacio</h3>
-          <p class="linea">Que el visitante encuentre el camino sin preguntar.</p>
-        </div>
-        <span class="detalle">Señalización y wayfinding en madera, acrílico y corte láser</span>
-      </div>
-      <div class="construimos-item">
-        <div>
-          <h3>En la calle</h3>
-          <p class="linea">El punto de venta que se mueve por la ciudad.</p>
-        </div>
-        <span class="detalle">Brandeo de flota y vehículos</span>
-      </div>
-      <div class="construimos-item">
-        <div>
-          <h3>En la mano</h3>
-          <p class="linea">Lo que la gente se lleva puesto.</p>
-        </div>
-        <span class="detalle">Merchandising, dotación, regalos corporativos</span>
-      </div>
-      <div class="construimos-item">
-        <div>
-          <h3>En la mesa</h3>
-          <p class="linea">Lo que se deja sobre la mesa después de la reunión.</p>
-        </div>
-        <span class="detalle">Carpetas, brochures, piezas impresas corporativas</span>
-      </div>
+      <div class="construimos-item h"><img src="assets/bento/03-stand-feria-azul.webp" alt="Stand de feria completo, amueblado"><span class="cap">Feria y evento</span></div>
+      <div class="construimos-item h"><img src="assets/bento/04-photocall-blush.webp" alt="Panel de photocall"><span class="cap">Feria y evento</span></div>
+      <div class="construimos-item h"><img src="assets/bento/08-vehiculo-grafito.webp" alt="Vehículo con vinilo de marca"><span class="cap">Calle</span></div>
+      <div class="construimos-item v"><img src="assets/bento/01-exhibidor-piso-hueso.webp" alt="Exhibidor de piso"><span class="cap">Punto de venta</span></div>
+      <div class="construimos-item v"><img src="assets/bento/11-merchandising-esfero.webp" alt="Merchandising de mesa"><span class="cap">Mesa</span></div>
+      <div class="construimos-item"><img src="assets/bento/02-counter-display-grafito.webp" alt="Counter display en acrílico"><span class="cap">Punto de venta</span></div>
+      <div class="construimos-item"><img src="assets/bento/05-caja-luz-cubo.webp" alt="Caja de luz"><span class="cap">Fachada</span></div>
+      <div class="construimos-item"><img src="assets/bento/06-neon-flex-blush.webp" alt="Letrero neón flex"><span class="cap">Fachada</span></div>
+      <div class="construimos-item"><img src="assets/bento/07-senalizacion-interior-hueso.webp" alt="Señalización interior"><span class="cap">Espacio</span></div>
+      <div class="construimos-item"><img src="assets/bento/09-tote-bag-sincopa.webp" alt="Tote bag de merchandising"><span class="cap">Mano</span></div>
+      <div class="construimos-item"><img src="assets/bento/10-carpeta-corporativa-hueso.webp" alt="Carpeta corporativa"><span class="cap">Mesa</span></div>
     </div>
-    <!-- NOTA DE PRODUCCIÓN (interna, no publicar): imágenes conceptuales, pendientes de generar con Stable Diffusion. No hay trabajo instalado todavía para este bloque. -->
   </div>
 </section>
 
@@ -429,7 +385,7 @@
 <script>
   var lb = document.getElementById('lightbox');
   var lbImg = document.getElementById('lb-img');
-  document.querySelectorAll('.caso-media-grid img').forEach(function(img){
+  document.querySelectorAll('.caso-media-grid img, .construimos-item img').forEach(function(img){
     img.addEventListener('click', function(){
       lbImg.src = img.src;
       lbImg.alt = img.alt;
