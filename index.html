@@ -114,10 +114,10 @@
   .construimos{background:var(--ink-deep);color:#fff}
   .construimos .section-head p{color:rgba(255,255,255,.6)}
   .construimos-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:2px;
-    background:var(--line-inv);
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:16px;
+    background:transparent;
   }
-  @media(max-width:720px){.construimos-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}}
+  @media(max-width:720px){.construimos-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px;gap:12px}}
   .construimos-item{position:relative;overflow:hidden;background:var(--ink-deep)}
   .construimos-item.h{grid-column:span 2}
   .construimos-item.v{grid-row:span 2}
@@ -134,7 +134,7 @@
   .metodo{background:var(--paper)}
   .metodo-list{display:flex;flex-direction:column}
   .metodo-item{
-    display:grid;grid-template-columns:80px 1fr;gap:24px;padding:28px 0;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:80px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line);
   }
   .metodo-list .metodo-item:last-child{border-bottom:1px solid var(--line)}
   .metodo-item .num{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--orange-deep)}
@@ -243,17 +243,17 @@
       <p>Estos son los lugares que sabemos construir.</p>
     </div>
     <div class="construimos-grid">
-      <div class="construimos-item h"><img src="assets/bento/03-stand-feria-azul.webp" alt="Stand de feria completo, amueblado"><span class="cap">Feria y evento</span></div>
-      <div class="construimos-item h"><img src="assets/bento/04-photocall-blush.webp" alt="Panel de photocall"><span class="cap">Feria y evento</span></div>
-      <div class="construimos-item h"><img src="assets/bento/08-vehiculo-grafito.webp" alt="Vehículo con vinilo de marca"><span class="cap">Calle</span></div>
-      <div class="construimos-item v"><img src="assets/bento/01-exhibidor-piso-hueso.webp" alt="Exhibidor de piso"><span class="cap">Punto de venta</span></div>
-      <div class="construimos-item v"><img src="assets/bento/11-merchandising-esfero.webp" alt="Merchandising de mesa"><span class="cap">Mesa</span></div>
-      <div class="construimos-item"><img src="assets/bento/02-counter-display-grafito.webp" alt="Counter display en acrílico"><span class="cap">Punto de venta</span></div>
-      <div class="construimos-item"><img src="assets/bento/05-caja-luz-cubo.webp" alt="Caja de luz"><span class="cap">Fachada</span></div>
-      <div class="construimos-item"><img src="assets/bento/06-neon-flex-blush.webp" alt="Letrero neón flex"><span class="cap">Fachada</span></div>
-      <div class="construimos-item"><img src="assets/bento/07-senalizacion-interior-hueso.webp" alt="Señalización interior"><span class="cap">Espacio</span></div>
-      <div class="construimos-item"><img src="assets/bento/09-tote-bag-sincopa.webp" alt="Tote bag de merchandising"><span class="cap">Mano</span></div>
-      <div class="construimos-item"><img src="assets/bento/10-carpeta-corporativa-hueso.webp" alt="Carpeta corporativa"><span class="cap">Mesa</span></div>
+      <div class="construimos-item h"><img src="assets/bento/03-stand-feria-azul.webp" alt="Stand de feria completo, amueblado"><span class="cap">Stand de feria</span></div>
+      <div class="construimos-item h"><img src="assets/bento/04-photocall-blush.webp" alt="Panel de photocall"><span class="cap">Photocall</span></div>
+      <div class="construimos-item h"><img src="assets/bento/08-vehiculo-grafito.webp" alt="Vehículo con vinilo de marca"><span class="cap">Car wrapping</span></div>
+      <div class="construimos-item v"><img src="assets/bento/01-exhibidor-piso-hueso.webp" alt="Exhibidor de piso"><span class="cap">Exhibidor de piso</span></div>
+      <div class="construimos-item v"><img src="assets/bento/11-merchandising-esfero.webp" alt="Merchandising de mesa"><span class="cap">Merchandising</span></div>
+      <div class="construimos-item"><img src="assets/bento/02-counter-display-grafito.webp" alt="Counter display en acrílico"><span class="cap">Counter display</span></div>
+      <div class="construimos-item"><img src="assets/bento/05-caja-luz-cubo.webp" alt="Caja de luz"><span class="cap">Caja de luz</span></div>
+      <div class="construimos-item"><img src="assets/bento/06-neon-flex-blush.webp" alt="Letrero neón flex"><span class="cap">Aviso de neón</span></div>
+      <div class="construimos-item"><img src="assets/bento/07-senalizacion-interior-hueso.webp" alt="Señalización interior"><span class="cap">Señalización interior</span></div>
+      <div class="construimos-item"><img src="assets/bento/09-tote-bag-sincopa.webp" alt="Tote bag de merchandising"><span class="cap">Merchandising</span></div>
+      <div class="construimos-item"><img src="assets/bento/10-carpeta-corporativa-hueso.webp" alt="Carpeta corporativa"><span class="cap">Papelería corporativa</span></div>
     </div>
   </div>
 </section>
