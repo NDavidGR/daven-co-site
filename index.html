@@ -45,7 +45,7 @@
   }
   header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
   .logo{display:flex;align-items:center;gap:10px}
-  .logo img{height:60px}
+  .logo img{height:38px}
   nav{display:flex;gap:32px}
   @media(max-width:720px){nav{display:none}}
   nav a{font-size:13px;color:var(--ink);font-weight:500;letter-spacing:.02em;opacity:.75;transition:opacity .2s}
@@ -131,7 +131,7 @@
   }
 
   /* METODO */
-  .metodo{background:var(--paper);padding-bottom:60px}
+  .metodo{background:var(--paper)}
   .metodo-list{display:flex;flex-direction:column}
   .metodo-item{
     display:grid;grid-template-columns:80px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line);
@@ -142,7 +142,7 @@
   .metodo-item p strong{font-weight:800}
 
   /* TRAYECTORIA */
-  .trayectoria{background:var(--paper);padding-top:60px}
+  .trayectoria{background:var(--paper)}
   .casos{display:flex;flex-direction:column;gap:18px}
   .caso{
     display:grid;grid-template-columns:1fr 1fr;gap:0;
@@ -162,7 +162,13 @@
   .caso-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
   .caso-body h3{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.01em;margin-bottom:16px}
   .caso-body p{font-size:15.5px;color:rgba(255,255,255,.7);max-width:440px}
-  .otros-clientes{margin-top:40px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--stone);letter-spacing:.01em}
+  .otros-clientes{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
+  .otros-clientes .eyebrow{margin-bottom:20px}
+  .otros-clientes-list{display:flex;flex-wrap:wrap;gap:10px}
+  .otros-clientes-list span{
+    font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:var(--ink);
+    border:1px solid var(--line);padding:8px 16px;letter-spacing:.01em;
+  }
 
   /* LIGHTBOX */
   #lightbox{
@@ -356,7 +362,22 @@
 
     </div>
 
-    <div class="otros-clientes">Otros clientes del equipo: Brigard &amp; Urrutia · Efecty · Politécnico Grancolombiano · Club El Nogal.</div>
+    <div class="otros-clientes">
+      <div class="eyebrow">Otros clientes del equipo</div>
+      <div class="otros-clientes-list">
+        <span>Brigard &amp; Urrutia</span>
+        <span>Efecty</span>
+        <span>Politécnico Grancolombiano</span>
+        <span>Club El Nogal</span>
+        <span>Telesentinel</span>
+        <span>plus+ combustibles</span>
+        <span>El Ovejo Fries &amp; Drinks</span>
+        <span>El Lechón.com</span>
+        <span>Señalitec</span>
+        <span>Pavco</span>
+        <span>Banca de Proyectos</span>
+      </div>
+    </div>
 
   </div>
 </section>
