@@ -131,7 +131,7 @@
   }
 
   /* METODO */
-  .metodo{background:var(--paper)}
+  .metodo{background:var(--paper);padding-bottom:60px}
   .metodo-list{display:flex;flex-direction:column}
   .metodo-item{
     display:grid;grid-template-columns:80px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line);
@@ -142,7 +142,7 @@
   .metodo-item p strong{font-weight:800}
 
   /* TRAYECTORIA */
-  .trayectoria{background:var(--paper)}
+  .trayectoria{background:var(--paper);padding-top:60px}
   .casos{display:flex;flex-direction:column;gap:18px}
   .caso{
     display:grid;grid-template-columns:1fr 1fr;gap:0;
@@ -188,6 +188,8 @@
     font-size:clamp(30px,5vw,64px);font-weight:900;letter-spacing:-.02em;max-width:820px;margin:0 auto 20px;
   }
   .cierre h2 .accent{color:var(--orange)}
+  .cierre h4{font-size:22px;font-weight:800;color:#fff;max-width:480px;margin:0 auto 56px}
+  .cierre h4 .accent{color:var(--orange)}
   .cierre p{font-size:17px;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 40px}
   .cierre-cta{
     display:inline-flex;align-items:center;gap:10px;
@@ -395,8 +397,8 @@
 
 <section class="cierre" id="contacto">
   <div class="wrap">
-    <h2>Cuéntenos <span class="accent">dónde</span></h2>
-    <p>Escríbanos qué necesita, y para cuándo.</p>
+    <h2>Cuéntenos <span class="accent">qué</span> necesita</h2>
+    <h4><span class="accent">dónde</span> y para <span class="accent">cuándo</span>.</h4>
     <a href="mailto:david@daven.llc" class="cierre-cta">Hablemos → david@daven.llc</a>
   </div>
 </section>
