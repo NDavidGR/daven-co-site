@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:López;Manuel;;;
+FN:Manuel López
+ORG:DAVEN Colombia
+TITLE:Gerente
+TEL;TYPE=CELL,VOICE:+57 300 551 5848
+EMAIL;TYPE=INTERNET,WORK:manuel.lopez@daven.llc
+URL:https://co.daven.llc
+ADR;TYPE=WORK:;;Bogotá, Colombia;;;;
+END:VCARD

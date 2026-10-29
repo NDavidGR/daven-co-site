@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Henry Garzón · DAVEN Colombia</title>
+<meta name="theme-color" content="#1E1E1C">
+<meta property="og:title" content="Henry Garzón · DAVEN Colombia">
+<meta property="og:description" content="Gerente de Producción · DAVEN Colombia">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>:root{--bg:#1E1E1C;--text:#F2EEE6;--accent:#FF5B14;--on:#1E1E1C;--role:#FF5B14;--surface:#2a2a27;--muted:#a8a49b;--line:#ffffff40;--inputbg:#1E1E1C;--ph:#7d7a72;--qrbg:#F2EEE6}
+*{box-sizing:border-box;margin:0}
+body{font-family:Archivo,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;justify-content:center;padding:28px 20px 40px}
+.wrap{width:100%;max-width:400px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{width:160px;height:auto;display:block}
+.lang{background:none;border:1px solid var(--line);color:var(--text);border-radius:99px;min-width:44px;min-height:44px;padding:0 14px;font:600 13px Archivo,sans-serif;cursor:pointer}
+.id{margin-top:44px}
+.id.ph{margin-top:22px}
+.portrait{display:block;width:100%;height:auto;aspect-ratio:1/1;border-radius:8px;margin-bottom:22px}
+.avatar{width:88px;height:88px;border-radius:50%;object-fit:cover;display:block;margin-bottom:20px}
+.ini{display:flex;align-items:center;justify-content:center;background:var(--accent);color:var(--on);font:500 28px "IBM Plex Mono",ui-monospace,monospace}
+h1{font-size:34px;font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.role{font:500 14px "IBM Plex Mono",ui-monospace,monospace;color:var(--role);text-transform:uppercase;letter-spacing:.08em;margin-top:12px}
+.co{color:var(--muted);font-size:15px;margin-top:4px}
+.save{display:block;margin:36px 0 12px;background:var(--accent);color:var(--on);text-decoration:none;font-weight:800;text-align:center;padding:17px;border-radius:8px;font-size:17px}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.q{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:68px;background:var(--surface);color:var(--text);text-decoration:none;border-radius:8px;font-size:13px;font-weight:600}
+.more{display:flex;gap:20px;margin-top:22px;justify-content:center;flex-wrap:wrap}
+.link{background:none;border:0;color:var(--muted);font:600 14px Archivo,sans-serif;padding:12px 4px;min-height:44px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.link[aria-expanded=true]{color:var(--text)}
+.panel{display:none;background:var(--surface);border-radius:8px;padding:20px;margin-top:6px;text-align:center}
+.panel.on{display:block}
+.qr{background:var(--qrbg);border-radius:8px;padding:14px;width:240px;margin:0 auto 12px}
+.qr svg{width:100%;height:auto;display:block}
+.btn{background:transparent;border:1px solid var(--line);color:var(--text);padding:12px 18px;min-height:44px;border-radius:8px;font:600 14px Archivo,sans-serif;cursor:pointer}
+form{display:grid;gap:10px;text-align:left}
+input{background:var(--inputbg);border:1px solid var(--line);border-radius:8px;padding:13px;min-height:46px;color:var(--text);font:inherit}
+input::placeholder{color:var(--ph)}
+.hint{color:var(--muted);font-size:13px;margin-top:10px}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:600;font-size:13px;opacity:0;transition:.25s;pointer-events:none}
+#toast.on{opacity:1}
+</style></head>
+<body><div class="wrap">
+<div class="top"><img class="logo" src="../assets/logo-daven-web.png" alt="DAVEN Colombia" width="160" height="28"></div>
+<main>
+  <div class="id">
+    <div class="avatar ini" aria-hidden="true">HG</div>
+    <h1>Henry Garzón</h1>
+    <p class="role">Gerente de Producción</p>
+    <p class="co">DAVEN Colombia</p>
+  </div>
+  <a class="save" href="henry.vcf" download="Henry Garzón.vcf">Guardar contacto</a>
+  <div class="quick"><a class="q" href="tel:+573118090484"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Llamar</span></a><a class="q" href="https://wa.me/573118090484" target=_blank rel=noopener><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>WhatsApp</span></a><a class="q" href="mailto:henry.garzon@daven.llc"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 7 9-7"/></svg><span>Email</span></a></div>
+  <div class="more">
+    <button class="link" id="bqr" aria-expanded="false" aria-controls="pqr">Mostrar QR</button>
+    <button class="link" id="bx" aria-expanded="false" aria-controls="px">Intercambiar contactos</button>
+  </div>
+  <section class="panel" id="pqr">
+    <div class="qr"><svg viewBox="0 0 310 310" class="segno"><path transform="scale(10)" class="qrline" stroke="#1e1e1c" d="M1 1.5h7m3 0h3m2 0h1m2 0h3m1 0h7m-29 1h1m5 0h1m5 0h1m2 0h2m1 0h1m3 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m6 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h6m5 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m2 0h1m1 0h6m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h4m1 0h1m2 0h3m-21 1h1m1 0h5m2 0h3m2 0h1m1 0h2m1 0h1m2 0h5m-27 1h1m1 0h3m2 0h3m1 0h1m4 0h4m1 0h4m3 0h1m-29 1h1m2 0h1m1 0h4m1 0h2m3 0h1m1 0h2m1 0h2m2 0h1m-24 1h2m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m3 0h2m3 0h3m1 0h1m-28 1h1m1 0h2m2 0h1m1 0h2m1 0h1m3 0h3m7 0h2m-26 1h1m2 0h2m1 0h1m1 0h2m2 0h2m1 0h1m1 0h3m1 0h3m3 0h1m-29 1h1m2 0h2m1 0h2m2 0h1m1 0h4m9 0h2m-22 1h1m4 0h2m1 0h1m2 0h1m3 0h4m3 0h1m-28 1h4m1 0h2m1 0h2m1 0h1m2 0h1m2 0h1m1 0h1m5 0h2m-27 1h1m3 0h2m3 0h2m1 0h1m3 0h1m2 0h4m1 0h1m1 0h1m1 0h1m-29 1h1m2 0h1m2 0h1m1 0h1m1 0h1m4 0h2m6 0h1m2 0h1m-27 1h1m1 0h1m1 0h2m3 0h1m1 0h2m1 0h3m1 0h1m1 0h1m2 0h1m3 0h1m-28 1h1m1 0h3m1 0h1m4 0h1m3 0h1m1 0h1m1 0h6m1 0h3m-21 1h2m2 0h3m1 0h1m1 0h1m1 0h1m3 0h5m-29 1h7m2 0h1m2 0h4m2 0h3m1 0h1m1 0h3m-27 1h1m5 0h1m1 0h3m1 0h2m1 0h1m3 0h2m3 0h1m2 0h1m-28 1h1m1 0h3m1 0h1m1 0h5m1 0h1m2 0h1m2 0h5m1 0h1m-27 1h1m1 0h3m1 0h1m1 0h1m1 0h4m2 0h1m3 0h1m4 0h4m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h3m1 0h13m-28 1h1m5 0h1m2 0h1m1 0h1m4 0h1m3 0h1m1 0h2m1 0h1m1 0h1m-28 1h7m1 0h4m5 0h2m2 0h2m1 0h1m1 0h1"/></svg></div>
+    <button class="btn" id="share">Compartir tarjeta</button>
+  </section>
+  <section class="panel" id="px">
+    <form id="xchg">
+      <input name="n" required placeholder="Su nombre" autocomplete="name">
+      <input name="e" type="email" required placeholder="Email" autocomplete="email">
+      <input name="p" type="tel" placeholder="Teléfono" autocomplete="tel">
+      <input name="c" placeholder="Empresa" autocomplete="organization">
+      <button class="btn" type="submit">Enviar mis datos</button>
+    </form>
+    <p class="hint">Se abre su app de correo con sus datos listos para enviar.</p>
+  </section>
+</main>
+</div>
+<div id="toast"></div>
+<script>
+const STR={"save": {"es": "Guardar contacto", "en": "Save contact"}, "call": {"es": "Llamar", "en": "Call"}, "wa": {"es": "WhatsApp", "en": "WhatsApp"}, "mail": {"es": "Email", "en": "Email"}, "showqr": {"es": "Mostrar QR", "en": "Show QR"}, "xchg": {"es": "Intercambiar contactos", "en": "Exchange contacts"}, "share": {"es": "Compartir tarjeta", "en": "Share card"}, "send": {"es": "Enviar mis datos", "en": "Send my details"}, "hint": {"es": "Se abre su app de correo con sus datos listos para enviar.", "en": "Your mail app opens with your details ready to send."}, "ph_name": {"es": "Su nombre", "en": "Your name"}, "ph_email": {"es": "Email", "en": "Email"}, "ph_phone": {"es": "Tel\u00e9fono", "en": "Phone"}, "ph_co": {"es": "Empresa", "en": "Company"}, "copied": {"es": "Link copiado", "en": "Link copied"}, "subject": {"es": "Contacto desde su tarjeta DAVEN", "en": "Contact from your DAVEN card"}, "b_hi": {"es": "Hola", "en": "Hi"}, "b_intro": {"es": "Le comparto mis datos:", "en": "Sharing my details:"}, "b_name": {"es": "Nombre", "en": "Name"}, "b_email": {"es": "Email", "en": "Email"}, "b_phone": {"es": "Tel\u00e9fono", "en": "Phone"}, "b_co": {"es": "Empresa", "en": "Company"}, "sig_btn": {"es": "Guardar mi contacto", "en": "Save my contact"}, "scan": {"es": "Escanee para conectar", "en": "Scan to connect"}}, BI=false, URL_="https://co.daven.llc/tarjetas/henry/", TO="henry.garzon@daven.llc", NAME="Henry Garz\u00f3n";
+const $=s=>document.querySelector(s);
+let lang="es";
+if(BI){lang=(navigator.language||"es").slice(0,2)==="en"?"en":"es";try{lang=localStorage.getItem("lang")||lang}catch(e){}}
+const L=k=>STR[k][lang];
+const toast=t=>{const e=$("#toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),1800)};
+function apply(){if(!BI)return;document.documentElement.lang=lang;
+document.querySelectorAll("[data-i18n]").forEach(e=>e.textContent=STR[e.dataset.i18n][lang]);
+document.querySelectorAll("[data-i18n-ph]").forEach(e=>e.placeholder=STR[e.dataset.i18nPh][lang]);
+$("#lang").textContent=lang==="es"?"EN":"ES";$("#lang").setAttribute("aria-label",lang==="es"?"Switch to English":"Cambiar a español")}
+if(BI){$("#lang").onclick=()=>{lang=lang==="es"?"en":"es";try{localStorage.setItem("lang",lang)}catch(e){};apply()}}
+apply();
+function pair(btn,panel,other,otherPanel){btn.onclick=()=>{const open=!panel.classList.contains("on");
+panel.classList.toggle("on",open);btn.setAttribute("aria-expanded",open);
+otherPanel.classList.remove("on");other.setAttribute("aria-expanded","false");
+if(open)panel.scrollIntoView({behavior:"smooth",block:"nearest"})}}
+pair($("#bqr"),$("#pqr"),$("#bx"),$("#px"));pair($("#bx"),$("#px"),$("#bqr"),$("#pqr"));
+$("#share").onclick=async()=>{if(navigator.share){try{await navigator.share({title:NAME,url:URL_})}catch(e){}}else{try{await navigator.clipboard.writeText(URL_);toast(L("copied"))}catch(e){prompt("Link",URL_)}}};
+$("#xchg").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+const body=[L("b_hi")+" "+NAME+",","",L("b_intro"),L("b_name")+": "+f.get("n"),L("b_email")+": "+f.get("e"),L("b_phone")+": "+(f.get("p")||"-"),L("b_co")+": "+(f.get("c")||"-")].join("\n");
+location.href="mailto:"+TO+"?subject="+encodeURIComponent(L("subject"))+"&body="+encodeURIComponent(body)};
+</script></body></html>
