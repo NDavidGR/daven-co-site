@@ -1,24 +1,68 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-CO">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DAVEN Colombia | Agencia creativa y material POP en Bogotá</title>
 <meta name="description" content="Agencia creativa en Bogotá. Diseñamos y producimos material POP, stands, señalización y piezas de marca. Ideas construidas.">
+<meta name="theme-color" content="#1E1E1C">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<!-- Al compartir en WhatsApp, LinkedIn, Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="DAVEN Colombia">
+<meta property="og:title" content="DAVEN Colombia | Si usted lo puede imaginar, nosotros lo podemos construir">
+<meta property="og:description" content="Diseñamos y producimos material POP, stands, señalización y piezas de marca en Bogotá.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://co.daven.llc/">
+<meta property="og:url" content="https://co.daven.llc/">
+<meta property="og:image" content="https://co.daven.llc/assets/casos/pavco-stand.webp">
+<meta property="og:image:width" content="700">
+<meta property="og:image:height" content="499">
+<meta property="og:image:alt" content="Stand de PAVCO Wavin instalado en feria">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "DAVEN Colombia",
+  "legalName": "DAVEN SAS",
+  "taxID": "900.967.967-1",
+  "description": "Agencia creativa en Bogotá. Diseño y producción de material POP, stands, señalización y piezas de marca.",
+  "url": "https://co.daven.llc/",
+  "logo": "https://co.daven.llc/assets/logo-co.svg",
+  "image": "https://co.daven.llc/assets/casos/pavco-stand.webp",
+  "email": "david@daven.llc",
+  "telephone": "+57 300 551 5848",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bogotá D.C.",
+    "addressCountry": "CO"
+  },
+  "areaServed": "CO",
+  "knowsAbout": ["Material POP", "Stands para ferias", "Señalización", "Exhibidores", "Merchandising", "Car wrapping"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --orange:#FF5B14;
-    --orange-deep:#C93F00;
+    --orange-ink:#A83500;
     --paper:#F2EEE6;
     --paper-mid:#E2DCCF;
     --stone:#6B6963;
     --ink:#1E1E1C;
-    --ink-deep:#1E1E1C;
+    --ink-soft:#2A2A27;
+    --on-ink:#FFFFFF;
+    --on-ink-muted:rgba(255,255,255,.68);
+    --on-ink-faint:#A8A8A6;
     --line:rgba(30,30,28,.14);
     --line-inv:rgba(242,238,230,.14);
+    --header-h:70px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -29,12 +73,27 @@
     line-height:1.5;
     overflow-x:hidden;
   }
-  .mono{font-family:'IBM Plex Mono',monospace}
+  ::selection{background:var(--orange);color:var(--ink)}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
+  button{font:inherit;color:inherit}
   .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  @media(max-width:720px){.wrap{padding:0 20px}}
   section{padding:110px 0}
-  @media(max-width:720px){section{padding:70px 0}}
+  section[id]{scroll-margin-top:var(--header-h)}
+  @media(max-width:720px){section{padding:72px 0}}
+  h1,h2,h3{text-wrap:balance}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* FOCO: tinta sobre claro, naranja sobre oscuro */
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .on-ink :focus-visible{outline-color:var(--orange)}
+
+  .skip{
+    position:absolute;left:16px;top:-60px;z-index:200;
+    background:var(--ink);color:var(--on-ink);padding:12px 18px;border-radius:4px;font-weight:600;
+  }
+  .skip:focus{top:12px}
 
   /* HEADER */
   header{
@@ -43,228 +102,337 @@
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
-  header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
-  .logo{display:flex;align-items:center;gap:10px}
-  .logo img{height:38px}
-  nav{display:flex;gap:32px}
-  @media(max-width:720px){nav{display:none}}
-  nav a{font-size:13px;color:var(--ink);font-weight:500;letter-spacing:.02em;opacity:.75;transition:opacity .2s}
-  nav a:hover{opacity:1}
+  header .wrap{display:flex;align-items:center;gap:32px;min-height:var(--header-h)}
+  .logo{display:flex;align-items:center;margin-right:auto}
+  .logo img{height:38px;width:auto}
+  nav{display:flex;gap:28px}
+  nav a{font-size:14px;color:var(--ink);font-weight:500;letter-spacing:.01em;padding:10px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+  nav a:hover{border-color:var(--ink)}
   .nav-cta{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink);
-    background:var(--orange);padding:9px 18px;border-radius:4px;font-weight:600;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);
+    background:var(--orange);padding:0 18px;min-height:44px;display:inline-flex;align-items:center;
+    border-radius:4px;font-weight:600;
+  }
+  .menu-btn{display:none}
+  @media(max-width:820px){
+    header .wrap{gap:12px}
+    .logo img{height:30px}
+    .menu-btn{
+      display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 12px;
+      background:none;border:1px solid var(--line);border-radius:4px;cursor:pointer;
+      font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;
+    }
+    nav{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;gap:0;padding:8px 20px 20px;
+      background:var(--paper);border-bottom:1px solid var(--line);
+    }
+    header.open nav{display:flex}
+    nav a{font-size:17px;padding:14px 0;border-bottom:1px solid var(--line)}
+    nav a:hover{border-color:var(--line)}
   }
 
   /* HERO */
   .hero{
-    background:var(--ink-deep);
-    color:#fff;
-    padding:200px 0 140px;
-    position:relative;
+    background:var(--ink);
+    color:var(--on-ink);
+    padding:calc(var(--header-h) + 90px) 0 110px;
   }
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--orange);
-    letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;
-  }
-  .trayectoria .eyebrow{color:var(--orange-deep)}
+  .hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+  @media(max-width:960px){.hero .wrap{grid-template-columns:1fr;gap:56px}}
+  @media(max-width:720px){.hero{padding:calc(var(--header-h) + 48px) 0 80px}}
   .hero h1{
-    font-size:clamp(38px,6vw,84px);
+    font-size:clamp(38px,4.6vw,68px);
     font-weight:900;
     line-height:1.02;
     letter-spacing:-.02em;
-    max-width:920px;
-    position:relative;
+    text-wrap:pretty;
   }
   .hero h1 em{color:var(--orange);font-style:normal}
-  .hero p{
-    margin-top:32px;font-size:19px;color:rgba(255,255,255,.65);max-width:520px;font-weight:400;
+  .hero-lead{
+    margin-top:28px;font-size:19px;color:var(--on-ink-muted);max-width:30em;
   }
-  .hero-btns{display:flex;align-items:center;gap:28px;margin-top:44px;flex-wrap:wrap}
+  .hero-btns{display:flex;align-items:center;gap:28px;margin-top:40px;flex-wrap:wrap}
   .btn-primary{
-    font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--ink-deep);
-    background:var(--orange);padding:15px 28px;border-radius:4px;letter-spacing:.02em;
+    display:inline-flex;align-items:center;min-height:48px;
+    font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;color:var(--ink);
+    background:var(--orange);padding:0 28px;border-radius:4px;letter-spacing:.02em;
+    transition:background-color .2s;
   }
+  .btn-primary:hover{background:#FF7638}
   .btn-secondary{
-    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:#fff;
-    opacity:.75;letter-spacing:.02em;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:3px;
+    display:inline-flex;align-items:center;min-height:44px;
+    font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;color:var(--on-ink);
+    text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:6px;
+    transition:text-decoration-color .2s;
   }
-  .btn-secondary:hover{opacity:1}
+  .btn-secondary:hover{text-decoration-color:var(--orange)}
+
+  /* Render → instalado */
+  .proof{position:relative;padding:0 0 64px 0}
+  .proof-real{position:relative}
+  .proof-render{
+    position:absolute;left:-28px;bottom:0;width:54%;
+    border:6px solid var(--ink);
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+  }
+  @media(max-width:960px){.proof-render{left:-8px}}
+  .proof .zoom img{width:100%;height:auto}
+  .proof-label{
+    position:absolute;top:10px;left:10px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    background:var(--ink);color:var(--on-ink);padding:5px 9px;pointer-events:none;
+  }
+  .proof-real .proof-label{left:auto;right:10px;background:var(--orange);color:var(--ink)}
+  .proof figcaption{
+    margin-top:14px;padding-left:calc(54% - 8px);
+    font-size:13px;color:var(--on-ink-faint);
+  }
 
   /* MANIFIESTO */
-  .manifiesto{background:var(--paper)}
-  .manifiesto blockquote{
-    font-size:clamp(24px,3.4vw,42px);
+  .manifiesto{padding:120px 0}
+  @media(max-width:720px){.manifiesto{padding:80px 0}}
+  .manifiesto p{
+    font-size:clamp(26px,3.4vw,44px);
     font-weight:700;
-    line-height:1.28;
-    max-width:920px;
+    line-height:1.3;
+    max-width:22em;
     letter-spacing:-.01em;
-    color:var(--ink);
+    text-wrap:balance;
   }
-  .manifiesto blockquote .accent{color:var(--orange-deep)}
+  .manifiesto .accent{color:var(--orange-ink)}
 
   /* SECTION HEAD */
-  .section-head{max-width:640px;margin-bottom:64px}
-  .section-head .eyebrow{margin-bottom:16px}
-  .section-head h2{font-size:clamp(28px,3.6vw,44px);font-weight:800;letter-spacing:-.01em}
-  .section-head p{margin-top:20px;font-size:17px;color:var(--stone);max-width:520px}
-  .trayectoria .section-head h2{color:var(--ink)}
-  .trayectoria .section-head p{color:var(--stone)}
+  .section-head{max-width:640px;margin-bottom:56px}
+  .section-head h2{font-size:clamp(30px,3.8vw,48px);font-weight:800;letter-spacing:-.015em;line-height:1.1}
+  .section-head p{margin-top:18px;font-size:17px;color:var(--stone);max-width:34em}
+  .section-head p a{text-decoration:underline;text-underline-offset:4px}
 
-  /* CONSTRUIMOS (bento) */
-  .construimos{background:var(--ink-deep);color:#fff}
-  .construimos .section-head p{color:rgba(255,255,255,.6)}
-  .construimos-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:16px;
-    background:transparent;
+  /* ZOOM (botón que abre el visor) */
+  .zoom{
+    display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in;
+    overflow:hidden;position:relative;
   }
-  @media(max-width:720px){.construimos-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px;gap:12px}}
-  .construimos-item{position:relative;overflow:hidden;background:var(--ink-deep)}
-  .construimos-item.h{grid-column:span 2}
-  .construimos-item.v{grid-row:span 2}
-  @media(max-width:720px){.construimos-item.v{grid-row:span 1}}
-  .construimos-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;cursor:zoom-in}
-  .construimos-item:hover img{transform:scale(1.06)}
-  .construimos-item .cap{
-    position:absolute;left:0;right:0;bottom:0;padding:10px 14px;
+  .zoom img{width:100%;height:100%;object-fit:cover}
+  @media (hover:hover) and (prefers-reduced-motion:no-preference){
+    .zoom img{transition:transform .6s cubic-bezier(.16,1,.3,1)}
+    .zoom:hover img{transform:scale(1.04)}
+  }
+
+  /* FORMATOS */
+  .formatos{background:var(--ink);color:var(--on-ink)}
+  .formatos .section-head p{color:var(--on-ink-muted)}
+  .grupo{
+    display:grid;grid-template-columns:220px 1fr;gap:40px;
+    padding:40px 0;border-top:1px solid var(--line-inv);
+  }
+  .grupo:last-child{padding-bottom:0}
+  @media(max-width:900px){.grupo{grid-template-columns:1fr;gap:20px;padding:32px 0}}
+  .grupo h3{font-size:22px;font-weight:800;letter-spacing:-.01em}
+  .grupo-info p{margin-top:8px;font-size:15px;color:var(--on-ink-muted)}
+  .grupo-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px;
+  }
+  @media(max-width:720px){.grupo-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;gap:10px}}
+  .pieza{position:relative;background:var(--ink-soft)}
+  .pieza.lg{grid-column:span 2;grid-row:span 2}
+  .pieza.w{grid-column:span 2}
+  .pieza figcaption{
+    position:absolute;left:0;bottom:0;padding:7px 11px;pointer-events:none;
     font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
-    color:#fff;background:rgba(30,30,28,.72);
+    color:var(--on-ink);background:rgba(30,30,28,.82);
   }
 
   /* METODO */
-  .metodo{background:var(--paper);padding-bottom:60px}
-  .metodo-list{display:flex;flex-direction:column}
+  .metodo-list{list-style:none}
   .metodo-item{
-    display:grid;grid-template-columns:80px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:80px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line);
   }
-  .metodo-list .metodo-item:last-child{border-bottom:1px solid var(--line)}
-  .metodo-item .num{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--orange-deep)}
-  .metodo-item p{font-size:17px;color:var(--ink);max-width:640px}
-  .metodo-item p strong{font-weight:800}
+  .metodo-item:last-child{border-bottom:1px solid var(--line)}
+  @media(max-width:520px){.metodo-item{grid-template-columns:44px 1fr;gap:12px}}
+  .metodo-item .num{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--orange-ink);padding-top:3px}
+  .metodo-item p{font-size:17px;max-width:40em}
+  .metodo-item strong{font-weight:800}
 
   /* TRAYECTORIA */
-  .trayectoria{background:var(--paper);padding-top:60px}
+  .trayectoria{padding-top:40px}
   .casos{display:flex;flex-direction:column;gap:18px}
   .caso{
-    display:grid;grid-template-columns:1fr 1fr;gap:0;
-    background:var(--ink-deep);color:#fff;
+    display:grid;grid-template-columns:1fr 1fr;
+    background:var(--ink);color:var(--on-ink);
     min-height:420px;
   }
-  .caso:nth-child(even){grid-template-columns:1fr 1fr}
   .caso:nth-child(even) .caso-media{order:2}
-  @media(max-width:820px){.caso{grid-template-columns:1fr}.caso:nth-child(even) .caso-media{order:0}}
-  .caso-media{position:relative;overflow:hidden;background:#000}
+  @media(max-width:820px){.caso{grid-template-columns:1fr;min-height:0}.caso:nth-child(even) .caso-media{order:0}}
+  .caso-media{background:#000}
   .caso-media-grid{display:grid;gap:2px;height:100%}
   .caso-media-grid.split{grid-template-columns:1fr 1fr}
-  .caso-media-grid.stack{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
-  .caso-media-grid img{width:100%;height:100%;object-fit:cover;min-height:210px;cursor:zoom-in}
+  .caso-media-grid.stack{grid-template-rows:1fr 1fr}
+  .caso-media-grid .zoom{min-height:210px}
+  .caso-media-grid.single .zoom{min-height:300px}
+  .caso-media-grid .fit img{object-fit:contain;background:#000}
   .caso-body{padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
-  @media(max-width:720px){.caso-body{padding:40px 28px}}
-  .caso-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--orange);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
-  .caso-body h3{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.01em;margin-bottom:16px}
-  .caso-body p{font-size:15.5px;color:rgba(255,255,255,.7);max-width:440px}
-  .otros-clientes{margin-top:64px;padding-top:40px;border-top:1px solid var(--line)}
-  .otros-clientes .eyebrow{margin-bottom:20px}
-  .otros-clientes-list{display:flex;flex-wrap:wrap;gap:10px}
-  .otros-clientes-list span{
-    font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:var(--ink);
-    border:1px solid var(--line);padding:8px 16px;letter-spacing:.01em;
-  }
-
-  /* LIGHTBOX */
-  #lightbox{
-    position:fixed;inset:0;z-index:1000;background:rgba(30,30,28,.96);
-    display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;
-  }
-  #lightbox.open{display:flex}
-  #lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
-  #lightbox .lb-close{
-    position:absolute;top:24px;right:28px;color:#fff;font-family:'IBM Plex Mono',monospace;
-    font-size:14px;letter-spacing:.05em;opacity:.7;
-  }
+  @media(max-width:720px){.caso-body{padding:36px 24px 40px}}
+  .caso-tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--on-ink-faint);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+  .caso-body h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.01em;line-height:1.15;margin-bottom:14px}
+  .caso-body p{font-size:16px;color:var(--on-ink-muted);max-width:28em}
+  .otros-clientes{margin-top:64px;padding-top:36px;border-top:1px solid var(--line);max-width:860px}
+  .otros-clientes h3{font-size:17px;font-weight:700;margin-bottom:10px}
+  .otros-clientes p{font-size:16px;color:var(--stone);line-height:1.8}
 
   /* CIERRE */
-  .cierre{background:var(--ink-deep);color:#fff;text-align:center}
+  .cierre{background:var(--ink);color:var(--on-ink);text-align:center;padding:140px 0}
+  @media(max-width:720px){.cierre{padding:96px 0}}
   .cierre h2{
-    font-size:clamp(30px,5vw,64px);font-weight:900;letter-spacing:-.02em;max-width:820px;margin:0 auto 20px;
+    font-size:clamp(34px,5.4vw,68px);font-weight:900;letter-spacing:-.02em;line-height:1.05;
+    max-width:13em;margin:0 auto;
   }
   .cierre h2 .accent{color:var(--orange)}
-  .cierre h4{font-size:45px;font-weight:800;color:#fff;max-width:480px;margin:0 auto 56px}
-  .cierre h4 .accent{color:var(--orange)}
-  .cierre p{font-size:17px;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 40px}
-  .cierre-cta{
-    display:inline-flex;align-items:center;gap:10px;
-    background:var(--orange);color:var(--ink-deep);
-    padding:16px 32px;font-weight:700;font-size:15px;border-radius:4px;
-  }
+  .cierre-acciones{margin-top:48px;display:flex;flex-direction:column;align-items:center;gap:18px}
+  .cierre .btn-primary{font-size:15px;min-height:54px;padding:0 36px}
+  .cierre-mail{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--on-ink-muted)}
+  .cierre-mail a{color:var(--on-ink);text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,255,255,.35)}
 
   /* FOOTER */
-  footer{background:var(--ink-deep);color:rgba(255,255,255,.5);padding:48px 0 40px;border-top:1px solid var(--line-inv)}
-  .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:13px;font-family:'IBM Plex Mono',monospace}
-  .foot-row a{color:#fff}
-  .foot-legal{margin-top:20px;font-size:12px;opacity:.6}
+  footer{background:var(--ink);color:var(--on-ink-faint);padding:44px 0 40px;border-top:1px solid var(--line-inv)}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px 24px;font-size:13px;font-family:'IBM Plex Mono',monospace}
+  .foot-row a{color:var(--on-ink);display:inline-flex;align-items:center;min-height:44px}
+  .foot-row a:hover{text-decoration:underline;text-underline-offset:4px}
+  .foot-legal{margin-top:12px;font-size:12px;color:#8A8A88}
+
+  /* VISOR */
+  .visor{
+    border:0;padding:0;background:transparent;color:var(--on-ink);
+    width:100%;height:100%;max-width:100%;max-height:100%;
+  }
+  .visor::backdrop{background:rgba(30,30,28,.95)}
+  .visor-inner{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:72px 24px 32px;cursor:zoom-out}
+  .visor img{max-width:100%;max-height:calc(100% - 40px);width:auto;height:auto;object-fit:contain;cursor:default}
+  .visor-cap{font-size:14px;color:var(--on-ink-muted);text-align:center;max-width:40em}
+  .visor-close{
+    position:absolute;top:16px;right:16px;min-height:44px;padding:0 16px;cursor:pointer;
+    background:none;border:1px solid var(--line-inv);border-radius:4px;color:var(--on-ink);
+    font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.04em;
+  }
+  .visor-close:hover{border-color:var(--on-ink)}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+  }
 </style>
 </head>
 <body>
 
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
 <header>
   <div class="wrap">
-    <div class="logo">
-      <img src="assets/logo-co.svg" alt="DAVEN CO">
-    </div>
-    <nav>
-      <a href="#construimos">Qué creamos</a>
+    <a href="#inicio" class="logo" aria-label="DAVEN, ir al inicio">
+      <img src="assets/logo-co.svg" alt="DAVEN" width="300" height="57">
+    </a>
+    <nav id="menu" aria-label="Principal">
+      <a href="#formatos">Qué creamos</a>
       <a href="#metodo">Método</a>
       <a href="#trayectoria">Trayectoria</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <a href="#contacto" class="nav-cta">Hablemos</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button>
   </div>
 </header>
 
-<section class="hero">
+<main id="contenido">
+
+<section class="hero on-ink" id="inicio">
   <div class="wrap">
-    <div class="eyebrow">Agencia creativa · Bogotá, Colombia</div>
-    <h1>Si usted lo puede imaginar,<br>nosotros lo podemos <em>construir.</em></h1>
-    <p>Diseñamos y producimos el material que pone su marca en el lugar apropiado: el punto de venta, la feria o la calle.</p>
-    <div class="hero-btns">
-      <a href="#contacto" class="btn-primary">Hablemos</a>
-      <a href="#construimos" class="btn-secondary">Ver qué creamos →</a>
+    <div class="hero-text">
+      <h1>Si usted lo puede imaginar, nosotros lo podemos <em>construir.</em></h1>
+      <p class="hero-lead">Somos una agencia creativa en Bogotá. Diseñamos y producimos el material que pone su marca en el lugar apropiado: el punto de venta, la feria o la calle.</p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn-primary">Hablemos</a>
+        <a href="#formatos" class="btn-secondary">Ver qué creamos →</a>
+      </div>
     </div>
+    <figure class="proof">
+      <div class="proof-real">
+        <button class="zoom" type="button" aria-label="Ampliar foto del stand PAVCO Wavin instalado">
+          <img src="assets/casos/pavco-stand.webp" alt="Stand de PAVCO Wavin instalado en feria, con visitantes" width="700" height="499" fetchpriority="high">
+        </button>
+        <span class="proof-label" aria-hidden="true">Instalado</span>
+      </div>
+      <div class="proof-render">
+        <button class="zoom" type="button" aria-label="Ampliar render del stand PAVCO Wavin">
+          <img src="assets/casos/pavco-render.webp" alt="Render del stand de PAVCO Wavin antes de producirlo" width="700" height="372">
+        </button>
+        <span class="proof-label" aria-hidden="true">Render</span>
+      </div>
+      <figcaption>Stand PAVCO Wavin: del render a la feria.</figcaption>
+    </figure>
   </div>
 </section>
 
 <section class="manifiesto">
   <div class="wrap">
-    <blockquote>
-      Todos saben contar una historia con palabras.<br>
-      Nosotros la contamos <span class="accent">construyéndola</span> —<br>
-      para que deje de leerse y empiece a vivirse.
-    </blockquote>
+    <p>Todos saben contar una historia con palabras. Nosotros la contamos <span class="accent">construyéndola</span>, para que deje de leerse y empiece a vivirse.</p>
   </div>
 </section>
 
-<section class="construimos" id="construimos">
+<section class="formatos on-ink" id="formatos">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Qué creamos</div>
       <h2>¿Dónde vive su marca?</h2>
+      <p>Estos son algunos de los formatos que trabajamos:</p>
     </div>
-    <div class="construimos-grid">
-      <div class="construimos-item h"><img src="assets/bento/03-stand-feria-azul.webp" alt="Stand de feria completo, amueblado"><span class="cap">Stand de feria</span></div>
-      <div class="construimos-item h"><img src="assets/bento/04-photocall-blush.webp" alt="Panel de photocall"><span class="cap">Photocall</span></div>
-      <div class="construimos-item h"><img src="assets/bento/08-vehiculo-grafito.webp" alt="Vehículo con vinilo de marca"><span class="cap">Car wrapping</span></div>
-      <div class="construimos-item v"><img src="assets/bento/01-exhibidor-piso-hueso.webp" alt="Exhibidor de piso"><span class="cap">Exhibidor de piso</span></div>
-      <div class="construimos-item v"><img src="assets/bento/11-merchandising-esfero.webp" alt="Merchandising de mesa"><span class="cap">Merchandising</span></div>
-      <div class="construimos-item"><img src="assets/bento/02-counter-display-grafito.webp" alt="Counter display en acrílico"><span class="cap">Counter display</span></div>
-      <div class="construimos-item"><img src="assets/bento/05-caja-luz-cubo.webp" alt="Caja de luz"><span class="cap">Caja de luz</span></div>
-      <div class="construimos-item"><img src="assets/bento/06-neon-flex-blush.webp" alt="Letrero neón flex"><span class="cap">Aviso de neón</span></div>
-      <div class="construimos-item"><img src="assets/bento/07-senalizacion-interior-hueso.webp" alt="Señalización interior"><span class="cap">Señalización interior</span></div>
-      <div class="construimos-item v"><img src="assets/bento/09-tote-bag-sincopa.webp" alt="Tote bag de merchandising"><span class="cap">Merchandising</span></div>
-      <div class="construimos-item"><img src="assets/bento/10-carpeta-corporativa-hueso.webp" alt="Carpeta corporativa"><span class="cap">Papelería corporativa</span></div>
-      <div class="construimos-item v"><img src="assets/bento/12-stand-movil-deliguau.webp" alt="Stand móvil Deliguau"><span class="cap">Stand móvil</span></div>
-      <div class="construimos-item v"><img src="assets/bento/13-stand-movil-h.webp" alt="Stand móvil de madera"><span class="cap">Stand móvil</span></div>
-      <div class="construimos-item v"><img src="assets/bento/16-exhibidor-huggies.webp" alt="Exhibidor de piso Huggies"><span class="cap">Exhibidor de piso</span></div>
-      <div class="construimos-item"><img src="assets/bento/14-activacion-postobon.webp" alt="Activación de marca Postobón y Grissly"><span class="cap">Activación de marca</span></div>
+
+    <div class="grupo">
+      <div class="grupo-info">
+        <h3>Punto de venta</h3>
+        <p>Exhibidores, counters y stands móviles para góndola, pasillo y caja.</p>
+      </div>
+      <div class="grupo-grid">
+        <figure class="pieza lg"><button class="zoom" type="button" aria-label="Ampliar: exhibidor de piso"><img src="assets/bento/01-exhibidor-piso-hueso.webp" alt="Render de referencia: exhibidor de piso en cartón" width="800" height="1400" loading="lazy" decoding="async"></button><figcaption>Exhibidor de piso</figcaption></figure>
+        <figure class="pieza"><button class="zoom" type="button" aria-label="Ampliar: counter display"><img src="assets/bento/02-counter-display-grafito.webp" alt="Render de referencia: counter display en acrílico" width="1400" height="1400" loading="lazy" decoding="async"></button><figcaption>Counter display</figcaption></figure>
+        <figure class="pieza"><button class="zoom" type="button" aria-label="Ampliar: exhibidor con repisas"><img src="assets/bento/16-exhibidor-huggies.webp" alt="Render de referencia: exhibidor de piso con repisas" width="1050" height="1400" loading="lazy" decoding="async"></button><figcaption>Exhibidor</figcaption></figure>
+        <figure class="pieza"><button class="zoom" type="button" aria-label="Ampliar: stand móvil con ruedas"><img src="assets/bento/12-stand-movil-deliguau.webp" alt="Render de referencia: stand móvil con ruedas" width="787" height="1399" loading="lazy" decoding="async"></button><figcaption>Stand móvil</figcaption></figure>
+        <figure class="pieza"><button class="zoom" type="button" aria-label="Ampliar: stand móvil de madera"><img src="assets/bento/13-stand-movil-h.webp" alt="Render de referencia: stand móvil de madera con toldo" width="787" height="1400" loading="lazy" decoding="async"></button><figcaption>Stand de madera</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <div class="grupo-info">
+        <h3>Feria y evento</h3>
+        <p>Stands, photocalls y activaciones de marca.</p>
+      </div>
+      <div class="grupo-grid">
+        <figure class="pieza lg"><button class="zoom" type="button" aria-label="Ampliar: stand de feria"><img src="assets/bento/03-stand-feria-azul.webp" alt="Render de referencia: stand de feria completo y amueblado" width="1400" height="804" loading="lazy" decoding="async"></button><figcaption>Stand de feria</figcaption></figure>
+        <figure class="pieza w"><button class="zoom" type="button" aria-label="Ampliar: photocall"><img src="assets/bento/04-photocall-blush.webp" alt="Render de referencia: estructura de photocall" width="1400" height="799" loading="lazy" decoding="async"></button><figcaption>Photocall</figcaption></figure>
+        <figure class="pieza w"><button class="zoom" type="button" aria-label="Ampliar: activación de marca"><img src="assets/bento/14-activacion-postobon.webp" alt="Render de referencia: activación de marca con dispensador de bebidas" width="1265" height="1400" loading="lazy" decoding="async"></button><figcaption>Activación de marca</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <div class="grupo-info">
+        <h3>Calle y fachada</h3>
+        <p>Vehículos rotulados, cajas de luz y avisos.</p>
+      </div>
+      <div class="grupo-grid">
+        <figure class="pieza lg"><button class="zoom" type="button" aria-label="Ampliar: car wrapping"><img src="assets/bento/08-vehiculo-grafito.webp" alt="Render de referencia: furgoneta rotulada con vinilo de marca" width="1400" height="763" loading="lazy" decoding="async"></button><figcaption>Car wrapping</figcaption></figure>
+        <figure class="pieza w"><button class="zoom" type="button" aria-label="Ampliar: aviso de neón"><img src="assets/bento/06-neon-flex-blush.webp" alt="Render de referencia: aviso en neón flex" width="1400" height="1400" loading="lazy" decoding="async"></button><figcaption>Aviso de neón</figcaption></figure>
+        <figure class="pieza w"><button class="zoom" type="button" aria-label="Ampliar: caja de luz"><img src="assets/bento/05-caja-luz-cubo.webp" alt="Render de referencia: caja de luz de pared" width="1400" height="800" loading="lazy" decoding="async"></button><figcaption>Caja de luz</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <div class="grupo-info">
+        <h3>Oficina y marca</h3>
+        <p>Señalización, papelería y merchandising.</p>
+      </div>
+      <div class="grupo-grid">
+        <figure class="pieza lg"><button class="zoom" type="button" aria-label="Ampliar: tote bag"><img src="assets/bento/09-tote-bag-sincopa.webp" alt="Render de referencia: tote bag de merchandising" width="1400" height="1400" loading="lazy" decoding="async"></button><figcaption>Merchandising</figcaption></figure>
+        <figure class="pieza w"><button class="zoom" type="button" aria-label="Ampliar: señalización interior"><img src="assets/bento/07-senalizacion-interior-hueso.webp" alt="Render de referencia: señalización interior colgante" width="1400" height="1400" loading="lazy" decoding="async"></button><figcaption>Señalización interior</figcaption></figure>
+        <figure class="pieza"><button class="zoom" type="button" aria-label="Ampliar: papelería corporativa"><img src="assets/bento/10-carpeta-corporativa-hueso.webp" alt="Render de referencia: carpeta y papelería corporativa" width="1400" height="1400" loading="lazy" decoding="async"></button><figcaption>Papelería</figcaption></figure>
+        <figure class="pieza"><button class="zoom" type="button" aria-label="Ampliar: esfero"><img src="assets/bento/11-merchandising-esfero.webp" alt="Render de referencia: esfero de merchandising" width="1400" height="1400" loading="lazy" decoding="async"></button><figcaption>Esferos</figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -272,162 +440,177 @@
 <section class="metodo" id="metodo">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Método</div>
       <h2>Así creamos</h2>
     </div>
-    <div class="metodo-list">
-      <div class="metodo-item">
-        <span class="num">01</span>
+    <ol class="metodo-list">
+      <li class="metodo-item">
+        <span class="num" aria-hidden="true">01</span>
         <p><strong>Entender.</strong> Escuchamos su necesidad puntual: vamos al lugar, medimos el espacio y conocemos el producto.</p>
-      </div>
-      <div class="metodo-item">
-        <span class="num">02</span>
+      </li>
+      <li class="metodo-item">
+        <span class="num" aria-hidden="true">02</span>
         <p><strong>Investigar.</strong> Buscamos la mejor solución para su caso específico, no la primera plantilla genérica.</p>
-      </div>
-      <div class="metodo-item">
-        <span class="num">03</span>
+      </li>
+      <li class="metodo-item">
+        <span class="num" aria-hidden="true">03</span>
         <p><strong>Imaginar.</strong> Diseñamos y contamos la historia que su marca necesita: render, materiales y plan definidos antes de producir.</p>
-      </div>
-      <div class="metodo-item">
-        <span class="num">04</span>
+      </li>
+      <li class="metodo-item">
+        <span class="num" aria-hidden="true">04</span>
         <p><strong>Construir.</strong> Cortamos, imprimimos, armamos y probamos.</p>
-      </div>
-      <div class="metodo-item">
-        <span class="num">05</span>
+      </li>
+      <li class="metodo-item">
+        <span class="num" aria-hidden="true">05</span>
         <p><strong>Instalar.</strong> La llevamos donde la necesite, la instalamos y la dejamos lista para contar su historia.</p>
-      </div>
-    </div>
+      </li>
+    </ol>
   </div>
 </section>
 
 <section class="trayectoria" id="trayectoria">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Trayectoria</div>
       <h2>Más de 20 años contando historias.</h2>
       <p>El equipo detrás de DAVEN lleva más de dos décadas en comunicaciones, publicidad, mercadeo y diseño. Estos son algunos trabajos de esa trayectoria.</p>
     </div>
 
     <div class="casos">
 
-      <div class="caso">
+      <article class="caso on-ink">
         <div class="caso-media">
-          <div class="caso-media-grid stack">
-            <img src="assets/casos/pavco-stand.webp" alt="Stand PAVCO Wavin">
-            <img src="assets/casos/pavco-render.webp" alt="Render stand PAVCO Wavin">
+          <div class="caso-media-grid single">
+            <button class="zoom" type="button" aria-label="Ampliar: letras corpóreas PAVCO"><img src="assets/casos/pavco-letras.webp" alt="Letras corpóreas gigantes de PAVCO instaladas en exterior" width="700" height="461" loading="lazy" decoding="async"></button>
           </div>
         </div>
         <div class="caso-body">
-          <div class="caso-tag">Caso · Espacio</div>
+          <p class="caso-tag">Espacio</p>
           <h3>PAVCO Wavin</h3>
           <p>Un catálogo de más de 4.000 referencias, convertido en un stand ferial completo: del render a la marca instalada y en uso.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="caso">
+      <article class="caso on-ink">
         <div class="caso-media">
           <div class="caso-media-grid split">
-            <img src="assets/casos/postobon-flota.webp" alt="Flota Postobón Manzana">
-            <img src="assets/casos/postobon-carro.webp" alt="Carro móvil Postobón">
+            <button class="zoom" type="button" aria-label="Ampliar: flota Postobón"><img src="assets/casos/postobon-flota.webp" alt="Camión de la flota Postobón Manzana con brandeo" width="410" height="410" loading="lazy" decoding="async"></button>
+            <button class="zoom" type="button" aria-label="Ampliar: carro móvil Postobón"><img src="assets/casos/postobon-carro.webp" alt="Carro móvil de venta Postobón" width="548" height="821" loading="lazy" decoding="async"></button>
           </div>
         </div>
         <div class="caso-body">
-          <div class="caso-tag">Caso · Producción</div>
+          <p class="caso-tag">Producción</p>
           <h3>Postobón</h3>
           <p>Brandeo de flota: el punto de venta que se mueve por la ciudad, de camión en camión.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="caso">
+      <article class="caso on-ink">
         <div class="caso-media">
           <div class="caso-media-grid split">
-            <img src="assets/casos/plus-chaqueta.webp" alt="plus+ dotación">
-            <img src="assets/casos/plus-camisas.webp" alt="plus+ camisas">
+            <button class="zoom" type="button" aria-label="Ampliar: chaqueta de dotación plus+"><img src="assets/casos/plus-chaqueta.webp" alt="Chaqueta de dotación con la marca plus+" width="494" height="614" loading="lazy" decoding="async"></button>
+            <button class="zoom" type="button" aria-label="Ampliar: camisas plus+"><img src="assets/casos/plus-camisas.webp" alt="Camisas de dotación con la marca plus+" width="700" height="666" loading="lazy" decoding="async"></button>
           </div>
         </div>
         <div class="caso-body">
-          <div class="caso-tag">Caso · Identidad</div>
+          <p class="caso-tag">Identidad</p>
           <h3>plus+</h3>
           <p>Una marca en todos los formatos: dotación, merchandising y promoción especial. La misma identidad, en superficies distintas.</p>
         </div>
-      </div>
+      </article>
 
-      <div class="caso">
+      <article class="caso on-ink">
         <div class="caso-media">
           <div class="caso-media-grid stack">
-            <img src="assets/casos/habitat-buho.webp" alt="Campaña Alcaldía de Bogotá - búho">
-            <img src="assets/casos/habitat-colibri.webp" alt="Campaña Alcaldía de Bogotá - colibrí">
+            <button class="zoom fit" type="button" aria-label="Ampliar: afiche del búho"><img src="assets/casos/habitat-buho.webp" alt="Afiche de la campaña de la Alcaldía de Bogotá con un búho: ¡Mucho ojo! Cuidemos los cerros" width="700" height="244" loading="lazy" decoding="async"></button>
+            <button class="zoom fit" type="button" aria-label="Ampliar: afiche del colibrí"><img src="assets/casos/habitat-colibri.webp" alt="Afiche de la campaña de la Alcaldía de Bogotá con un colibrí sobre la protección de humedales" width="700" height="274" loading="lazy" decoding="async"></button>
           </div>
         </div>
         <div class="caso-body">
-          <div class="caso-tag">Caso · Impresión</div>
+          <p class="caso-tag">Impresión</p>
           <h3>Alcaldía Mayor de Bogotá — Hábitat</h3>
           <p>Campaña de cuidado ambiental para humedales y cerros orientales, en afiches, piezas urbanas y material HabitARTE. Lo que se protege, se cuenta.</p>
         </div>
-      </div>
+      </article>
 
     </div>
 
     <div class="otros-clientes">
-      <div class="eyebrow">Otros clientes del equipo</div>
-      <div class="otros-clientes-list">
-        <span>Brigard &amp; Urrutia</span>
-        <span>Efecty</span>
-        <span>Politécnico Grancolombiano</span>
-        <span>Club El Nogal</span>
-        <span>Telesentinel</span>
-        <span>plus+ combustibles</span>
-        <span>El Ovejo Fries &amp; Drinks</span>
-        <span>El Lechón.com</span>
-        <span>Señalitec</span>
-        <span>Pavco</span>
-        <span>Banca de Proyectos</span>
-        <span>García Duarte Abogados</span>
-        <span>Arona Grupo Empresarial</span>
-        <span>Aequilibrium</span>
-        <span>Asoka</span>
-        <span>Suspiro Divino</span>
-        <span>Personal Balance</span>
-        <span>Animal Deva</span>
-      </div>
+      <h3>Otros clientes del equipo</h3>
+      <p>Brigard &amp; Urrutia · Efecty · Politécnico Grancolombiano · Club El Nogal · Telesentinel · El Ovejo Fries &amp; Drinks · El Lechón.com · Señalitec · Banca de Proyectos · García Duarte Abogados · Arona Grupo Empresarial · Aequilibrium · Asoka · Suspiro Divino · Personal Balance · Animal Deva</p>
     </div>
 
   </div>
 </section>
 
-<section class="cierre" id="contacto">
+<section class="cierre on-ink" id="contacto">
   <div class="wrap">
-    <h2>Cuéntenos <span class="accent">qué</span> necesita</h2>
-    <h4><span class="accent">dónde</span> y para <span class="accent">cuándo</span>.</h4>
-    <a href="mailto:david@daven.llc" class="cierre-cta">Hablemos → david@daven.llc</a>
+    <h2>Cuéntenos qué necesita, <span class="accent">dónde</span> y para cuándo.</h2>
+    <div class="cierre-acciones">
+      <a href="mailto:david@daven.llc?subject=Proyecto%20con%20DAVEN" class="btn-primary">Escríbanos</a>
+      <p class="cierre-mail">o llámenos al <a href="tel:+573005515848">+57 300 551 5848</a></p>
+    </div>
   </div>
 </section>
 
-<footer>
+</main>
+
+<footer class="on-ink">
   <div class="wrap">
     <div class="foot-row">
       <span>DAVEN SAS · NIT 900.967.967-1 · Bogotá D.C.</span>
       <a href="mailto:david@daven.llc">david@daven.llc</a>
-      <a href="https://daven.llc" target="_blank">daven.llc — US</a>
+      <a href="tel:+573005515848">+57 300 551 5848</a>
+      <a href="https://daven.llc" target="_blank" rel="noopener">daven.llc — EE. UU.<span class="sr-only"> (se abre en otra pestaña)</span></a>
     </div>
-    <div class="foot-legal">© 2026 DAVEN SAS. Todos los derechos reservados.</div>
+    <p class="foot-legal">© 2026 DAVEN SAS. Todos los derechos reservados.</p>
   </div>
 </footer>
 
-<div id="lightbox"><span class="lb-close">✕ cerrar</span><img id="lb-img" src="" alt=""></div>
+<dialog class="visor on-ink" id="visor" aria-label="Imagen ampliada">
+  <div class="visor-inner">
+    <button class="visor-close" type="button">Cerrar ✕</button>
+    <img id="visor-img" alt="">
+    <p class="visor-cap" id="visor-cap"></p>
+  </div>
+</dialog>
+
 <script>
-  var lb = document.getElementById('lightbox');
-  var lbImg = document.getElementById('lb-img');
-  document.querySelectorAll('.caso-media-grid img, .construimos-item img').forEach(function(img){
-    img.addEventListener('click', function(){
-      lbImg.src = img.src;
-      lbImg.alt = img.alt;
-      lb.classList.add('open');
+  // Menú móvil
+  var header = document.querySelector('header');
+  var menuBtn = document.querySelector('.menu-btn');
+  function setMenu(open){
+    header.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.textContent = open ? 'Cerrar' : 'Menú';
+  }
+  menuBtn.addEventListener('click', function(){ setMenu(!header.classList.contains('open')); });
+  document.querySelectorAll('#menu a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && header.classList.contains('open')) { setMenu(false); menuBtn.focus(); }
+  });
+
+  // Visor de imágenes
+  var visor = document.getElementById('visor');
+  var visorImg = document.getElementById('visor-img');
+  var visorCap = document.getElementById('visor-cap');
+  var opener = null;
+  document.querySelectorAll('.zoom').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var img = btn.querySelector('img');
+      opener = btn;
+      visorImg.src = img.currentSrc || img.src;
+      visorImg.alt = img.alt;
+      visorCap.textContent = img.alt;
+      visor.showModal();
     });
   });
-  lb.addEventListener('click', function(){ lb.classList.remove('open'); lbImg.src=''; });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') { lb.classList.remove('open'); lbImg.src=''; }
+  visor.addEventListener('click', function(e){
+    if (e.target !== visorImg) visor.close();
+  });
+  visor.addEventListener('close', function(){
+    visorImg.removeAttribute('src');
+    if (opener) opener.focus();
   });
 </script>
 
