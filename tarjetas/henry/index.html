@@ -33,10 +33,6 @@ h1{font-size:34px;font-weight:800;line-height:1.05;letter-spacing:-.02em}
 .qr{background:var(--qrbg);border-radius:8px;padding:14px;width:240px;margin:0 auto 12px}
 .qr svg{width:100%;height:auto;display:block}
 .btn{background:transparent;border:1px solid var(--line);color:var(--text);padding:12px 18px;min-height:44px;border-radius:8px;font:600 14px Archivo,sans-serif;cursor:pointer}
-form{display:grid;gap:10px;text-align:left}
-input{background:var(--inputbg);border:1px solid var(--line);border-radius:8px;padding:13px;min-height:46px;color:var(--text);font:inherit}
-input::placeholder{color:var(--ph)}
-.hint{color:var(--muted);font-size:13px;margin-top:10px}
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:600;font-size:13px;opacity:0;transition:.25s;pointer-events:none}
 #toast.on{opacity:1}
 </style></head>
@@ -53,27 +49,16 @@ input::placeholder{color:var(--ph)}
   <div class="quick"><a class="q" href="tel:+573118090484"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Llamar</span></a><a class="q" href="https://wa.me/573118090484" target=_blank rel=noopener><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span>WhatsApp</span></a><a class="q" href="mailto:henry.garzon@daven.llc"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 7 9-7"/></svg><span>Email</span></a></div>
   <div class="more">
     <button class="link" id="bqr" aria-expanded="false" aria-controls="pqr">Mostrar QR</button>
-    <button class="link" id="bx" aria-expanded="false" aria-controls="px">Intercambiar contactos</button>
   </div>
   <section class="panel" id="pqr">
     <div class="qr"><svg viewBox="0 0 310 310" class="segno"><path transform="scale(10)" class="qrline" stroke="#1e1e1c" d="M1 1.5h7m3 0h3m2 0h1m2 0h3m1 0h7m-29 1h1m5 0h1m5 0h1m2 0h2m1 0h1m3 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h1m3 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m6 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h6m5 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m2 0h1m1 0h6m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h4m1 0h1m2 0h3m-21 1h1m1 0h5m2 0h3m2 0h1m1 0h2m1 0h1m2 0h5m-27 1h1m1 0h3m2 0h3m1 0h1m4 0h4m1 0h4m3 0h1m-29 1h1m2 0h1m1 0h4m1 0h2m3 0h1m1 0h2m1 0h2m2 0h1m-24 1h2m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m3 0h2m3 0h3m1 0h1m-28 1h1m1 0h2m2 0h1m1 0h2m1 0h1m3 0h3m7 0h2m-26 1h1m2 0h2m1 0h1m1 0h2m2 0h2m1 0h1m1 0h3m1 0h3m3 0h1m-29 1h1m2 0h2m1 0h2m2 0h1m1 0h4m9 0h2m-22 1h1m4 0h2m1 0h1m2 0h1m3 0h4m3 0h1m-28 1h4m1 0h2m1 0h2m1 0h1m2 0h1m2 0h1m1 0h1m5 0h2m-27 1h1m3 0h2m3 0h2m1 0h1m3 0h1m2 0h4m1 0h1m1 0h1m1 0h1m-29 1h1m2 0h1m2 0h1m1 0h1m1 0h1m4 0h2m6 0h1m2 0h1m-27 1h1m1 0h1m1 0h2m3 0h1m1 0h2m1 0h3m1 0h1m1 0h1m2 0h1m3 0h1m-28 1h1m1 0h3m1 0h1m4 0h1m3 0h1m1 0h1m1 0h6m1 0h3m-21 1h2m2 0h3m1 0h1m1 0h1m1 0h1m3 0h5m-29 1h7m2 0h1m2 0h4m2 0h3m1 0h1m1 0h3m-27 1h1m5 0h1m1 0h3m1 0h2m1 0h1m3 0h2m3 0h1m2 0h1m-28 1h1m1 0h3m1 0h1m1 0h5m1 0h1m2 0h1m2 0h5m1 0h1m-27 1h1m1 0h3m1 0h1m1 0h1m1 0h4m2 0h1m3 0h1m4 0h4m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h3m1 0h13m-28 1h1m5 0h1m2 0h1m1 0h1m4 0h1m3 0h1m1 0h2m1 0h1m1 0h1m-28 1h7m1 0h4m5 0h2m2 0h2m1 0h1m1 0h1"/></svg></div>
     <button class="btn" id="share">Compartir tarjeta</button>
   </section>
-  <section class="panel" id="px">
-    <form id="xchg">
-      <input name="n" required placeholder="Su nombre" autocomplete="name">
-      <input name="e" type="email" required placeholder="Email" autocomplete="email">
-      <input name="p" type="tel" placeholder="Teléfono" autocomplete="tel">
-      <input name="c" placeholder="Empresa" autocomplete="organization">
-      <button class="btn" type="submit">Enviar mis datos</button>
-    </form>
-    <p class="hint">Se abre su app de correo con sus datos listos para enviar.</p>
-  </section>
 </main>
 </div>
 <div id="toast"></div>
 <script>
-const STR={"save": {"es": "Guardar contacto", "en": "Save contact"}, "call": {"es": "Llamar", "en": "Call"}, "wa": {"es": "WhatsApp", "en": "WhatsApp"}, "mail": {"es": "Email", "en": "Email"}, "showqr": {"es": "Mostrar QR", "en": "Show QR"}, "xchg": {"es": "Intercambiar contactos", "en": "Exchange contacts"}, "share": {"es": "Compartir tarjeta", "en": "Share card"}, "send": {"es": "Enviar mis datos", "en": "Send my details"}, "hint": {"es": "Se abre su app de correo con sus datos listos para enviar.", "en": "Your mail app opens with your details ready to send."}, "ph_name": {"es": "Su nombre", "en": "Your name"}, "ph_email": {"es": "Email", "en": "Email"}, "ph_phone": {"es": "Tel\u00e9fono", "en": "Phone"}, "ph_co": {"es": "Empresa", "en": "Company"}, "copied": {"es": "Link copiado", "en": "Link copied"}, "subject": {"es": "Contacto desde su tarjeta DAVEN", "en": "Contact from your DAVEN card"}, "b_hi": {"es": "Hola", "en": "Hi"}, "b_intro": {"es": "Le comparto mis datos:", "en": "Sharing my details:"}, "b_name": {"es": "Nombre", "en": "Name"}, "b_email": {"es": "Email", "en": "Email"}, "b_phone": {"es": "Tel\u00e9fono", "en": "Phone"}, "b_co": {"es": "Empresa", "en": "Company"}, "sig_btn": {"es": "Guardar mi contacto", "en": "Save my contact"}, "scan": {"es": "Escanee para conectar", "en": "Scan to connect"}}, BI=false, URL_="https://co.daven.llc/tarjetas/henry/", TO="henry.garzon@daven.llc", NAME="Henry Garz\u00f3n";
+const STR={"save": {"es": "Guardar contacto", "en": "Save contact"}, "call": {"es": "Llamar", "en": "Call"}, "wa": {"es": "WhatsApp", "en": "WhatsApp"}, "mail": {"es": "Email", "en": "Email"}, "showqr": {"es": "Mostrar QR", "en": "Show QR"}, "share": {"es": "Compartir tarjeta", "en": "Share card"}, "copied": {"es": "Link copiado", "en": "Link copied"}, "sig_btn": {"es": "Guardar mi contacto", "en": "Save my contact"}, "scan": {"es": "Escanee para conectar", "en": "Scan to connect"}}, BI=false, URL_="https://co.daven.llc/tarjetas/henry/", NAME="Henry Garz\u00f3n";
 const $=s=>document.querySelector(s);
 let lang="es";
 if(BI){lang=(navigator.language||"es").slice(0,2)==="en"?"en":"es";try{lang=localStorage.getItem("lang")||lang}catch(e){}}
@@ -85,13 +70,8 @@ document.querySelectorAll("[data-i18n-ph]").forEach(e=>e.placeholder=STR[e.datas
 $("#lang").textContent=lang==="es"?"EN":"ES";$("#lang").setAttribute("aria-label",lang==="es"?"Switch to English":"Cambiar a español")}
 if(BI){$("#lang").onclick=()=>{lang=lang==="es"?"en":"es";try{localStorage.setItem("lang",lang)}catch(e){};apply()}}
 apply();
-function pair(btn,panel,other,otherPanel){btn.onclick=()=>{const open=!panel.classList.contains("on");
+$("#bqr").onclick=()=>{const panel=$("#pqr"),btn=$("#bqr"),open=!panel.classList.contains("on");
 panel.classList.toggle("on",open);btn.setAttribute("aria-expanded",open);
-otherPanel.classList.remove("on");other.setAttribute("aria-expanded","false");
-if(open)panel.scrollIntoView({behavior:"smooth",block:"nearest"})}}
-pair($("#bqr"),$("#pqr"),$("#bx"),$("#px"));pair($("#bx"),$("#px"),$("#bqr"),$("#pqr"));
+if(open)panel.scrollIntoView({behavior:"smooth",block:"nearest"})};
 $("#share").onclick=async()=>{if(navigator.share){try{await navigator.share({title:NAME,url:URL_})}catch(e){}}else{try{await navigator.clipboard.writeText(URL_);toast(L("copied"))}catch(e){prompt("Link",URL_)}}};
-$("#xchg").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
-const body=[L("b_hi")+" "+NAME+",","",L("b_intro"),L("b_name")+": "+f.get("n"),L("b_email")+": "+f.get("e"),L("b_phone")+": "+(f.get("p")||"-"),L("b_co")+": "+(f.get("c")||"-")].join("\n");
-location.href="mailto:"+TO+"?subject="+encodeURIComponent(L("subject"))+"&body="+encodeURIComponent(body)};
 </script></body></html>
